@@ -1,6 +1,6 @@
-<a routerLink="/addPost" routerLinkActive="active">Dodaj nowy post</a>
-<h2>Lista wpisów na blogu:</h2>
-<app-posts-list></app-posts-list>
-<app-add-post></app-add-post><!--
-
- <router-outlet></router-outlet> -->
+<nav>
+    <button routerLink="">Strona główna</button>
+    <button routerLink="/posts">Lista postów</button>
+    <button routerLink="/addPost">Dodaj nowy post</button><br>
+</nav>
+<router-outlet></router-outlet>

@@ -27,8 +27,8 @@ export class PostsService {
     getNumberOfPosts() : number {
         return this.posts.length;
     }
-/*
+
     addPost(newPost : Post) {
-        this.postAdded.emit(newPost);
-    } */
+        this.posts.push(newPost);
+    } 
 }
