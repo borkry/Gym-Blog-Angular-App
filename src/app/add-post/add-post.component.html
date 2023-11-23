@@ -1,9 +1,9 @@
 <h1>Dodaj post!</h1>
-<form (ngSubmit)="onSubmit()">
-Tytuł: <input type="text"><br>
-Krótki opis: <input type="text"><br>
-Kategoria: <input type="text"><br>
-Treść posta: <input type="text"><br>
-Autor: <input type="text"><br>
+<form [formGroup]="form4create" (ngSubmit)="onSubmit()">
+Tytuł: <input type="text" formControlName="title" required><br>
+Krótki opis: <input type="text" formControlName="description" required><br>
+Kategoria: <input type="text" formControlName="category" required><br>
+Treść posta: <input type="text" formControlName="content" required><br>
+Autor: <input type="text" formControlName="author" required><br>
 <input type="submit" value="Dodaj post">
 </form>
