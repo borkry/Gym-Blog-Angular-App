@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Post } from './types/post';
+import { AddPostComponent } from './add-post/add-post.component';
+import { Component, EventEmitter, Input, LOCALE_ID, OnInit, Output } from '@angular/core';
 
 @Injectable() 
 export class PostsService {
+    @Output() postAdded = new EventEmitter<Post>();
     posts : Post[] = [];
 
     constructor() {
@@ -24,4 +27,8 @@ export class PostsService {
     getNumberOfPosts() : number {
         return this.posts.length;
     }
+/*
+    addPost(newPost : Post) {
+        this.postAdded.emit(newPost);
+    } */
 }

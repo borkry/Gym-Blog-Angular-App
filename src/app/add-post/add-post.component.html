@@ -1,9 +1,60 @@
 <h1>Dodaj post!</h1>
 <form [formGroup]="form4create" (ngSubmit)="onSubmit()">
-Tytuł: <input type="text" formControlName="title" required><br>
-Krótki opis: <input type="text" formControlName="description" required><br>
-Kategoria: <input type="text" formControlName="category" required><br>
-Treść posta: <input type="text" formControlName="content" required><br>
-Autor: <input type="text" formControlName="author" required><br>
-<input type="submit" value="Dodaj post">
+    Tytuł: <input type="text" formControlName="title" required><br>
+    Krótki opis: <input type="text" formControlName="description" required><br>
+    Kategoria: <input type="text" formControlName="category" required><br>
+    Treść posta: <input type="text" formControlName="content" required><br>
+    Autor: <input type="text" formControlName="author" required><br>
+
+    <div *ngIf="title?.errors?.['required'] && title?.touched">Tytuł jest wymagany!</div>
+    <div *ngIf="title?.errors?.['minlength']">
+        Tytuł jest za krótki. Minimalna długość tytułu:
+        {{title?.errors?.['minlength']['requiredLength']}}
+    </div>
+    <div *ngIf="title?.errors?.['maxlength']">
+        Tytuł jest za długi. Maksymalna długość tytułu:
+        {{title?.errors?.['maxlength']['requiredLength']}}
+    </div>
+
+    <div *ngIf="description?.errors?.['required'] && description?.touched">Krótki opis jest wymagany!</div>
+    <div *ngIf="description?.errors?.['minlength']">
+        Krótki opis jest za krótki. Minimalna długość krótkiego opis:
+        {{description?.errors?.['minlength']['requiredLength']}}
+    </div>
+    <div *ngIf="description?.errors?.['maxlength']">
+        Krótki opis jest za długi. Maksymalna długość krótkiego opisu:
+        {{description?.errors?.['maxlength']['requiredLength']}}
+    </div>
+
+    <div *ngIf="category?.errors?.['required'] && category?.touched">Kategoria jest wymagana!</div>
+    <div *ngIf="category?.errors?.['minlength']">
+        Kategoria jest za krótka. Minimalna długość kategorii:
+        {{category?.errors?.['minlength']['requiredLength']}}
+    </div>
+    <div *ngIf="category?.errors?.['maxlength']">
+        Kategoria jest za długa. Maksymalna długość kategorii:
+        {{category?.errors?.['maxlength']['requiredLength']}}
+    </div>
+
+    <div *ngIf="content?.errors?.['required'] && content?.touched">Treść jest wymagana!</div>
+    <div *ngIf="content?.errors?.['minlength']">
+        Treść jest za krótka. Minimalna długość treści:
+        {{content?.errors?.['minlength']['requiredLength']}}
+    </div>
+    <div *ngIf="content?.errors?.['maxlength']">
+        Treść jest za długa. Maksymalna długość treści:
+        {{content?.errors?.['maxlength']['requiredLength']}}
+    </div>
+
+    <div *ngIf="author?.errors?.['required'] && author?.touched">Autor jest wymagany!</div>
+    <div *ngIf="author?.errors?.['minlength']">
+        Autor jest za krótki. Minimalna długość autora:
+        {{author?.errors?.['minlength']['requiredLength']}}
+    </div>
+    <div *ngIf="author?.errors?.['maxlength']">
+        Autor jest za długi. Maksymalna długość autora:
+        {{author?.errors?.['maxlength']['requiredLength']}}
+    </div>
+
+    <input [disabled]="!form4create.valid" type="submit" value="Dodaj post">
 </form>
