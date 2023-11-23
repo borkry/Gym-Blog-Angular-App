@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { PostsService } from '../posts.service';
 import { Post } from '../types/post';
 
@@ -54,30 +53,35 @@ export class AddPostComponent implements OnInit{
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(30),
-    ]);
+      Validators.pattern("[A-Z0-9].*"),
+    ])
 
     this.form4create.controls['description'].setValidators([
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(40),
+      Validators.pattern("[A-Z0-9].*"),
     ])
 
     this.form4create.controls['category'].setValidators([
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
+      Validators.pattern("[A-Z].*"),
     ])
 
     this.form4create.controls['content'].setValidators([
       Validators.required,
       Validators.minLength(40),
       Validators.maxLength(400),
+      Validators.pattern("[A-Z0-9].*"),
     ])
 
     this.form4create.controls['author'].setValidators([
       Validators.required,
       Validators.minLength(8),
       Validators.maxLength(50),
+      Validators.pattern("[A-Z].*"),
     ])
   }
   

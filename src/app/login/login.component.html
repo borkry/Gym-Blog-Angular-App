@@ -1,1 +1,28 @@
-<p>login works!</p>
+<h1>Zaloguj się!</h1>
+<form [formGroup]="form4login" (ngSubmit)="onSubmit()">
+    Email: <input type="email" formControlName="email" required><br>
+    Hasło: <input type="password" formControlName="password" required><br>
+
+    <div *ngIf="email?.errors?.['required'] && email?.touched">Email jest wymagany!</div>
+    <div *ngIf="email?.errors?.['pattern']">Email musi spełniać odpowiedni format!</div>
+    <div *ngIf="email?.errors?.['minlength']">
+        Email jest za krótki. Minimalna długość Emaila:
+        {{email?.errors?.['minlength']['requiredLength']}}
+    </div>
+    <div *ngIf="email?.errors?.['maxlength']">
+        Email jest za długi. Maksymalna długość Emaila:
+        {{email?.errors?.['maxlength']['requiredLength']}}
+    </div>
+
+    <div *ngIf="password?.errors?.['required'] && password?.touched">Hasło jest wymagane!</div>
+    <div *ngIf="password?.errors?.['minlength']">
+        Hasło jest za krótkie. Minimalna długość hasła:
+        {{password?.errors?.['minlength']['requiredLength']}}
+    </div>
+    <div *ngIf="password?.errors?.['maxlength']">
+        Hasło jest za długie. Maksymalna długość hasła:
+        {{password?.errors?.['maxlength']['requiredLength']}}
+    </div>
+
+    <input [disabled]="!form4login.valid" type="submit" value="Zaloguj się">
+</form>

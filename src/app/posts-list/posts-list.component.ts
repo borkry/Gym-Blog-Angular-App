@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Post } from '../types/post';
 import { PostListElementComponent } from '../post-list-element/post-list-element.component';
 import { PostsService } from '../posts.service';
-import { AddPostComponent } from '../add-post/add-post.component';
 
 @Component({
   selector: 'app-posts-list',

@@ -9,5 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-
+  handleClick(event: Event) {
+    event.preventDefault();
+  }
 }

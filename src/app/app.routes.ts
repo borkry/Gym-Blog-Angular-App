@@ -5,11 +5,13 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ExercisesListComponent } from './exercises-list/exercises-list.component';
+import { AddExerciseComponent } from './add-exercise/add-exercise.component';
 
 export const routes: Routes = [
     {
         path: 'addPost',
-        title: 'Dodawanie',
+        title: 'Dodawanie postu',
         component: AddPostComponent,
     },
     {
@@ -31,5 +33,15 @@ export const routes: Routes = [
         path: 'register',
         title: 'Rejestracja',
         component: RegisterComponent,
+    },
+    {
+        path: 'exercises',
+        title: 'Lista ćwiczeń',
+        component: ExercisesListComponent,
+    },
+    {
+        path: 'addExercise',
+        title: 'Dodawanie ćwiczenia',
+        component: AddExerciseComponent,
     }
 ];

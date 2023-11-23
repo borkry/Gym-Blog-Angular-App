@@ -33,7 +33,7 @@ export class Post {
   }
 
   set title(new_title: string) {
-  this._title = new_title;
+    this._title = new_title;
   }
   
   get description(): string {

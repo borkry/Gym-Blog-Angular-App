@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Post } from './types/post';
-import { AddPostComponent } from './add-post/add-post.component';
-import { Component, EventEmitter, Input, LOCALE_ID, OnInit, Output } from '@angular/core';
 
 @Injectable() 
 export class PostsService {

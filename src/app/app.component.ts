@@ -6,11 +6,13 @@ import { AddPostComponent } from './add-post/add-post.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ExerciseListElementComponent } from './exercise-list-element/exercise-list-element.component';
+import { ExercisesListComponent } from './exercises-list/exercises-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, PostsListComponent, AddPostComponent, RouterLink, AboutComponent, LoginComponent, RegisterComponent],
+  imports: [CommonModule, RouterOutlet, PostsListComponent, AddPostComponent, RouterLink, AboutComponent, LoginComponent, RegisterComponent, ExerciseListElementComponent, ExercisesListComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

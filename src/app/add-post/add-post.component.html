@@ -7,6 +7,7 @@
     Autor: <input type="text" formControlName="author" required><br>
 
     <div *ngIf="title?.errors?.['required'] && title?.touched">Tytuł jest wymagany!</div>
+    <div *ngIf="title?.errors?.['pattern']">Tytuł musi zaczynać się od wielkiej litery, lub liczby!</div>
     <div *ngIf="title?.errors?.['minlength']">
         Tytuł jest za krótki. Minimalna długość tytułu:
         {{title?.errors?.['minlength']['requiredLength']}}
@@ -17,6 +18,7 @@
     </div>
 
     <div *ngIf="description?.errors?.['required'] && description?.touched">Krótki opis jest wymagany!</div>
+    <div *ngIf="description?.errors?.['pattern']">Krótki opis musi zaczynać się od wielkiej litery, lub liczby!</div>
     <div *ngIf="description?.errors?.['minlength']">
         Krótki opis jest za krótki. Minimalna długość krótkiego opis:
         {{description?.errors?.['minlength']['requiredLength']}}
@@ -27,6 +29,7 @@
     </div>
 
     <div *ngIf="category?.errors?.['required'] && category?.touched">Kategoria jest wymagana!</div>
+    <div *ngIf="category?.errors?.['pattern']">Kategoria musi zaczynać się od wielkiej litery!</div>
     <div *ngIf="category?.errors?.['minlength']">
         Kategoria jest za krótka. Minimalna długość kategorii:
         {{category?.errors?.['minlength']['requiredLength']}}
@@ -37,6 +40,7 @@
     </div>
 
     <div *ngIf="content?.errors?.['required'] && content?.touched">Treść jest wymagana!</div>
+    <div *ngIf="content?.errors?.['pattern']">Treść postu musi zaczynać się od wielkiej litery, lub liczby!</div>
     <div *ngIf="content?.errors?.['minlength']">
         Treść jest za krótka. Minimalna długość treści:
         {{content?.errors?.['minlength']['requiredLength']}}
@@ -47,6 +51,7 @@
     </div>
 
     <div *ngIf="author?.errors?.['required'] && author?.touched">Autor jest wymagany!</div>
+    <div *ngIf="author?.errors?.['pattern']">Autor musi zaczynać się od wielkiej litery!</div>
     <div *ngIf="author?.errors?.['minlength']">
         Autor jest za krótki. Minimalna długość autora:
         {{author?.errors?.['minlength']['requiredLength']}}
