@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, LOCALE_ID, OnInit, Output } from '@angu
 
 @Injectable() 
 export class PostsService {
-    @Output() postAdded = new EventEmitter<Post>();
+    //@Output() postAdded = new EventEmitter<Post>();
     posts : Post[] = [];
 
     constructor() {
@@ -29,6 +29,8 @@ export class PostsService {
     }
 
     addPost(newPost : Post) {
-        this.posts.push(newPost);
+        this.posts.push(newPost);/*
+        console.log('Dodano nowy post:', newPost);
+        console.log(this.getPosts());*/
     } 
 }
