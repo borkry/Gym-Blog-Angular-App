@@ -5,11 +5,6 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 
 export const routes: Routes = [
     {
-        path: '',
-        title: 'Home Page',
-        component: AppComponent,
-    },
-    {
         path: 'addPost',
         title: 'Dodawanie',
         component: AddPostComponent,
