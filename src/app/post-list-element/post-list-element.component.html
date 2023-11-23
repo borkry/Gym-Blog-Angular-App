@@ -2,3 +2,4 @@
 <p>{{ post.description }}</p>
 <div>Autor: {{ post.author }}</div>
 <div>Treść: {{ post.content }}</div>
+<div>Data dodania: {{ post.create_date | date : 'shortDate' }}</div>
