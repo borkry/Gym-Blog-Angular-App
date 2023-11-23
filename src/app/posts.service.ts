@@ -20,4 +20,8 @@ export class PostsService {
     getPost(index : number) : Post {
         return this.posts[index];
     }
+
+    getNumberOfPosts() : number {
+        return this.posts.length;
+    }
 }
