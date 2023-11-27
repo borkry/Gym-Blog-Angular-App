@@ -4,6 +4,8 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { User } from '../types/user';
 import { UsersService } from '../users.service';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +20,7 @@ export class RegisterComponent implements OnInit {
   form4create: FormGroup;
 
   constructor(
-    private usersService: UsersService
+    private usersService: UsersService, private http : HttpClient, private router : Router
   ) {
     this.form4create = new FormGroup({
       name : new FormControl(),
@@ -82,9 +84,15 @@ export class RegisterComponent implements OnInit {
         this.form4create.value.email,
         this.form4create.value.password,
       );
-    this.usersService.addUser(newUser);
-    this.userAdded.emit(newUser);
-    this.form4create.reset();
+    //this.usersService.addUser(newUser);
+    //this.userAdded.emit(newUser);
+    this.http.post<any>("http://localhost:3000/users", this.form4create.value).subscribe(res =>{
+      alert("Pomyślnie zarejestrowano!");
+      this.form4create.reset();
+      this.router.navigate(['login']);
+    }, err=>{
+      alert("Rejestracja nie powiodła się!");
+    })
     }
   }
 }
