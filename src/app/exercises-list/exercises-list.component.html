@@ -1,3 +1,4 @@
-<div *ngFor="let exercise of exercises">
-    <app-exercise-list-element [exercise]="exercise"></app-exercise-list-element>
-  </div>
+Wyszukaj ćwiczenie: <input type="text" [(ngModel)]="searchValue" />
+<div *ngFor="let exercise of exercises | searchExercise : searchValue:'title';">
+  <app-exercise-list-element [exercise]="exercise"></app-exercise-list-element>
+</div>

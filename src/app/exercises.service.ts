@@ -11,6 +11,7 @@ export class ExercisesService {
         this.exercises[2] = new Exercise(3, "Cwiczenie przykładowe", 12, "szybko", 2, "minuta");
         this.exercises[3] = new Exercise(4, "Cwiczenie przykładowe", 12, "szybko", 2, "minuta");
         this.exercises[4] = new Exercise(5, "Cwiczenie przykładowe", 12, "szybko", 2, "minuta");
+        this.exercises[5] = new Exercise(6, "Tytuł testowy", 12, "szybko", 2, "minuta");
     }
 
     getExercises() : Exercise[] {
