@@ -1,4 +1,5 @@
 import { OnInit, Directive, ElementRef, Renderer2, Input } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 @Directive({
     selector: '[dateFormat]',
@@ -6,21 +7,15 @@ import { OnInit, Directive, ElementRef, Renderer2, Input } from '@angular/core';
 })
 
 export class dateFormatDirective implements OnInit {
-    @Input() date! : Date;
+    @Input('appPolishDate') date?: Date;
 
-    constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private datePipe: DatePipe) {}
 
-    ngOnInit() {
-        if (this.date) {
-            const formattedDate = this.formatDate(this.date); // Formatowanie daty
-            this.renderer.setProperty(this.el.nativeElement, 'textContent', formattedDate);
-        }
+  ngOnInit() {
+    if (this.date) {
+      const formattedDate = this.datePipe.transform(this.date, 'dd.MM.yyyy', 'GMT');
+      this.el.nativeElement.textContent = formattedDate;
     }
-
-    private formatDate(date: Date): string {
-        // Tutaj można użyć dowolnej biblioteki do formatowania daty (np. date-fns, moment.js)
-        const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-        return date.toLocaleDateString('pl-PL', options);
-      }
+  }
     
 }
