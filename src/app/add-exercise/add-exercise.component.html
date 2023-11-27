@@ -1,3 +1,12 @@
+<nav>
+    <button routerLink="/posts">Lista postów</button>
+    <button routerLink="/addPost">Dodaj nowy post</button>
+    <button routerLink="/about">Kontakt</button>
+    <button routerLink="/exercises">Lista ćwiczeń</button>
+    <button routerLink="/addExercise">Dodaj ćwiczenie</button>
+    <button routerLink="/login">Wyloguj się</button>
+</nav>
+
 <h1>Dodaj ćwiczenie!</h1>
 <form [formGroup]="form4create" (ngSubmit)="onSubmit()">
     Nazwa ćwiczenia: <input type="text" formControlName="name" required><br>

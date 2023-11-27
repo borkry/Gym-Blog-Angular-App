@@ -10,6 +10,11 @@ import { AddExerciseComponent } from './add-exercise/add-exercise.component';
 
 export const routes: Routes = [
     {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
+    },
+    {
         path: 'addPost',
         title: 'Dodawanie postu',
         component: AddPostComponent,

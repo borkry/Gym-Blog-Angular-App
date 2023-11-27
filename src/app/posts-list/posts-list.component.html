@@ -1,3 +1,13 @@
+<nav>
+  <button routerLink="/posts">Lista postów</button>
+  <button routerLink="/addPost">Dodaj nowy post</button>
+  <button routerLink="/about">Kontakt</button>
+  <button routerLink="/exercises">Lista ćwiczeń</button>
+  <button routerLink="/addExercise">Dodaj ćwiczenie</button>
+  <button routerLink="/login">Wyloguj się</button>
+</nav>
+
+
 Wyszukaj tytuł: <input type="text" [(ngModel)]="searchValue" />
 <div *ngFor="let post of posts | sortByDate | searchPost : searchValue:'title';">
   <app-post-list-element [post]="post"></app-post-list-element>

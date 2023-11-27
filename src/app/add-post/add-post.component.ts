@@ -3,6 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PostsService } from '../posts.service';
 import { Post } from '../types/post';
+import { ExercisesListComponent } from '../exercises-list/exercises-list.component';
+import { AboutComponent } from '../about/about.component';
+import { LoginComponent } from '../login/login.component';
+import { PostsListComponent } from '../posts-list/posts-list.component';
+import { AddExerciseComponent } from '../add-exercise/add-exercise.component';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-add-post',
@@ -10,7 +16,8 @@ import { Post } from '../types/post';
     providers: [PostsService],
     templateUrl: './add-post.component.html',
     styleUrl: './add-post.component.css',
-    imports: [CommonModule, FormsModule, ReactiveFormsModule]
+    imports: [CommonModule, FormsModule, ReactiveFormsModule, ExercisesListComponent,
+      AboutComponent, LoginComponent, PostsListComponent, AddExerciseComponent, RouterLink]
 })
 export class AddPostComponent implements OnInit{
   @Output() postAdded = new EventEmitter<Post>();

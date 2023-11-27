@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../types/user';
 import { UsersService } from '../users.service';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
   providers: [UsersService],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

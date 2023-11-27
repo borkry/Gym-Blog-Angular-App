@@ -3,12 +3,18 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ExercisesService } from '../exercises.service';
 import { Exercise } from '../types/exercise';
+import { AddPostComponent } from '../add-post/add-post.component';
+import { LoginComponent } from '../login/login.component';
+import { PostsListComponent } from '../posts-list/posts-list.component';
+import { AboutComponent } from '../about/about.component';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-add-exercise',
   standalone: true,
   providers: [ExercisesService],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, AddPostComponent,
+    AboutComponent, LoginComponent, PostsListComponent, RouterLink],
   templateUrl: './add-exercise.component.html',
   styleUrl: './add-exercise.component.css'
 })

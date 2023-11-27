@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../types/user';
 import { UsersService } from '../users.service';
+import { RegisterComponent } from '../register/register.component';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   providers: [UsersService],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RegisterComponent, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
