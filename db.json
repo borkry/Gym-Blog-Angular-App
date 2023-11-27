@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Jan",
+      "surname": "Kowalski",
+      "email": "user@gmail.com",
+      "password": "12345"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Tytuł 1",
+      "description": "Opis",
+      "category": "Kategoria",
+      "content": "Treść",
+      "author": "Pudzian",
+      "create_date": ""
+    },
+    {
+      "id": 2,
+      "title": "Tytuł 2",
+      "description": "Opis",
+      "category": "Kategoria",
+      "content": "Treść",
+      "author": "Pudzian",
+      "create_date": ""
+    }
+  ],
+  "exercises": [
+    {
+      "id": 1,
+      "name": "Ćwiczenie 1",
+      "repeats": "12",
+      "rate": "wolno",
+      "RiR": "0",
+      "interruption": "minuta"
+    },
+    {
+      "id": 2,
+      "name": "Ćwiczenie 2",
+      "repeats": "5",
+      "rate": "szybko",
+      "RiR": "3",
+      "interruption": "5 minut"
+    }
+   ]
+}
