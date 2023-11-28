@@ -1,6 +1,12 @@
-<h3>{{ exercise.name }}</h3>
-<div></div>
-<div>Powtórzenia: {{ exercise.repeats }}</div>
-<div>Tempo: {{ exercise.rate }}</div>
-<div>RiR: {{ exercise.RiR }}</div>
-<div>Przerwa: {{ exercise.interruption }}</div>
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">{{ exercise.name }}</h3>
+    <div class="card-text">
+      <div class="mb-2">Powtórzenia: {{ exercise.repeats }}</div>
+      <div class="mb-2">Tempo: {{ exercise.rate }}</div>
+      <div class="mb-2">RiR: {{ exercise.RiR }}</div>
+      <div class="mb-2">Przerwa: {{ exercise.interruption }}</div>
+    </div>
+  </div>
+</div>
+

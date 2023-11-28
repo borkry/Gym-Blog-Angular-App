@@ -20,6 +20,13 @@
       "email": "1test@wp.pl",
       "password": "12345",
       "id": 7
+    },
+    {
+      "name": "Adam",
+      "surname": "Nowak",
+      "email": "abc123@wp.pl",
+      "password": "qwe123",
+      "id": 8
     }
   ],
   "posts": [
