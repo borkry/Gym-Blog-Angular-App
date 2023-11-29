@@ -27,6 +27,27 @@
       "email": "abc123@wp.pl",
       "password": "qwe123",
       "id": 8
+    },
+    {
+      "name": "Kuba",
+      "surname": "Cimoch",
+      "email": "kubacim3@wp.pl",
+      "password": "12345",
+      "id": 9
+    },
+    {
+      "name": "Krystian",
+      "surname": "Borys",
+      "email": "k@wp.pl",
+      "password": "12345",
+      "id": 10
+    },
+    {
+      "name": "Jan",
+      "surname": "Abacki",
+      "email": "abacki@wp.pl",
+      "password": "12345",
+      "id": 11
     }
   ],
   "posts": [

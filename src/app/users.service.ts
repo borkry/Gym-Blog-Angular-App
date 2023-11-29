@@ -1,31 +1,35 @@
 import { Injectable } from '@angular/core';
 import { User } from './types/user';
+import { HttpClient } from '@angular/common/http';
+import { PostUser } from './register/post-user';
 
-@Injectable() 
+@Injectable({
+    providedIn: 'root'
+}) 
 export class UsersService {
-    users : User[] = [];
+    user : User | undefined;
+    url = 'http://localhost:3000/users';
 
-    constructor() {
-        this.users[0] = new User(1, "Jan", "Kowalski", "mail@mail.com", "hasło");
-        this.users[1] = new User(2, "Jan", "Kowalski", "mail@mail.com", "hasło");
-        this.users[2] = new User(3, "Jan", "Kowalski", "mail@mail.com", "hasło");
-        this.users[3] = new User(4, "Jan", "Kowalski", "mail@mail.com", "hasło");
-        this.users[4] = new User(5, "Jan", "Kowalski", "mail@mail.com", "hasło");
+    constructor(private http : HttpClient) { }
+
+    login() {
+        return this.http.get<any>(this.url);
+    }
+
+    setUser(user: User) : void {
+        localStorage.setItem('user', JSON.stringify(user));
+        this.user = user;
+    }
+
+    getUser() : User | null {
+        const user = localStorage.getItem('user');
+        if(!user) {
+            return null;
         }
-
-    getUsers() : User[] {
-        return this.users;
+        return JSON.parse(user);
     }
 
-    getUser(index : number) : User {
-        return this.users[index];
+    createUser(user: PostUser){
+        return this.http.post<User>(this.url, user);
     }
-
-    getNumberOfUsers() : number {
-        return this.users.length;
-    }
-
-    addUser(newUser : User) {
-        this.users.push(newUser);
-    } 
 }

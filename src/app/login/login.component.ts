@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit{
 
   onSubmit() {
     if (this.form4login.valid) {
-      this.http.get<any>("http://localhost:3000/users").subscribe(res=>{
+      this.usersService.login().subscribe(res=>{
         const user = res.find((a:any)=>{
           return a.email === this.form4login.value.email && a.password === this.form4login.value.password
         });

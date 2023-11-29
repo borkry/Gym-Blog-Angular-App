@@ -4,8 +4,8 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { User } from '../types/user';
 import { UsersService } from '../users.service';
 import { RouterOutlet, RouterLink } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { PostUser } from './post-user';
 
 @Component({
   selector: 'app-register',
@@ -16,11 +16,10 @@ import { Router } from '@angular/router';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {
-  @Output() userAdded = new EventEmitter<User>();
   form4create: FormGroup;
 
   constructor(
-    private usersService: UsersService, private http : HttpClient, private router : Router
+    private usersService: UsersService, private router : Router
   ) {
     this.form4create = new FormGroup({
       name : new FormControl(),
@@ -77,16 +76,13 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {  
     if (this.form4create.valid) {
-      let newUser = new User(
-        this.usersService.getNumberOfUsers() + 1,
-        this.form4create.value.name,
-        this.form4create.value.surname,
-        this.form4create.value.email,
-        this.form4create.value.password,
-      );
-    //this.usersService.addUser(newUser);
-    //this.userAdded.emit(newUser);
-    this.http.post<any>("http://localhost:3000/users", this.form4create.value).subscribe(res =>{
+      let newUser : PostUser = {
+        name: this.form4create.value.name,
+        surname: this.form4create.value.surname,
+        email: this.form4create.value.email,
+        password: this.form4create.value.password,
+      };
+    this.usersService.createUser(newUser).subscribe(res =>{
       alert("Pomyślnie zarejestrowano!");
       this.form4create.reset();
       this.router.navigate(['login']);
