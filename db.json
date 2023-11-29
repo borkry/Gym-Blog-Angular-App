@@ -58,7 +58,7 @@
       "category": "Kategoria",
       "content": "Treść",
       "author": "Pudzian",
-      "create_date": ""
+      "create_date": "2023-11-17"
     },
     {
       "id": 2,
@@ -67,7 +67,25 @@
       "category": "Kategoria",
       "content": "Treść",
       "author": "Pudzian",
-      "create_date": ""
+      "create_date": "2023-11-12"
+    },
+    {
+      "title": "Post 1",
+      "description": "Krótki opis",
+      "category": "Sport",
+      "content": "Ansfajksnsajknfjaksnfjkasnfjkasnfjkasnfjkasnfjkasnfjkasnfjkasnfjkasnfjkasnjfknsajkfnasjkfnasjkfnkj",
+      "author": "Pudzianowski",
+      "create_date": "2023-11-11",
+      "id": 4
+    },
+    {
+      "title": "Testowy post",
+      "description": "To jest opis",
+      "category": "Test",
+      "content": "AASDskglkadjglaskjgkaslgjasklgjsaklgjlaskgjasklgj",
+      "author": "Marian Kmita",
+      "create_date": "2023-11-29T23:12:12.400Z",
+      "id": 5
     }
   ],
   "exercises": [
@@ -86,6 +104,14 @@
       "rate": "szybko",
       "RiR": "3",
       "interruption": "5 minut"
+    },
+    {
+      "name": "Cwiczenie 3",
+      "repeats": "12",
+      "rate": "szybko",
+      "RiR": "2",
+      "interruption": "3 minuty",
+      "id": 3
     }
   ]
 }

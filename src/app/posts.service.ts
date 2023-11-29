@@ -1,35 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Post } from './types/post';
+import { HttpClient } from '@angular/common/http';
+import { PostPost } from './add-post/post-post';
 
-@Injectable() 
+@Injectable({
+    providedIn: 'root'
+}) 
 export class PostsService {
-    //@Output() postAdded = new EventEmitter<Post>();
-    posts : Post[] = [];
+    url = 'http://localhost:3000/posts';
 
-    constructor() {
-        this.posts[0] = new Post(1, "Innowacyjny plan treningowy", "Krótkie wprowadzenie", "Plan treningowy", "do uzupełnienia", "Pudzian", new Date("2023-11-20"));
-        this.posts[1] = new Post(2, "Innowacyjny plan treningowy", "Krótkie wprowadzenie", "Plan treningowy", "do uzupełnienia", "Pudzian", new Date("2023-11-20"));
-        this.posts[2] = new Post(3, "Innowacyjny plan treningowy", "Krótkie wprowadzenie", "Plan treningowy", "do uzupełnienia", "Pudzian", new Date("2023-11-29"));
-        this.posts[3] = new Post(4, "Innowacyjny plan treningowy", "Krótkie wprowadzenie", "Plan treningowy", "do uzupełnienia", "Pudzian", new Date("2023-11-19"));
-        this.posts[4] = new Post(5, "Innowacyjny plan treningowy", "Krótkie wprowadzenie", "Plan treningowy", "do uzupełnienia", "Pudzian", new Date("2023-11-20"));
-        this.posts[5] = new Post(6, "Tytuł testowy", "Krótkie wprowadzenie", "Plan treningowy", "do uzupełnienia", "Pudzian", new Date("2023-11-20"));
+    constructor(private http : HttpClient) { }
+
+    getAllPosts() {
+        return this.http.get<Post[]>(this.url);
     }
 
-    getPosts() : Post[] {
-        return this.posts;
+    getPostById(id : number) {
+        return this.http.get<Post>(`${this.url}/${id}`)
     }
 
-    getPost(index : number) : Post {
-        return this.posts[index];
+    createPost(post : PostPost) {
+        return this.http.post<Post>(this.url, post);
     }
-
-    getNumberOfPosts() : number {
-        return this.posts.length;
-    }
-
-    addPost(newPost : Post) {
-        this.posts.push(newPost);/*
-        console.log('Dodano nowy post:', newPost);
-        console.log(this.getPosts());*/
-    } 
 }

@@ -8,6 +8,8 @@ import { LoginComponent } from '../login/login.component';
 import { PostsListComponent } from '../posts-list/posts-list.component';
 import { AboutComponent } from '../about/about.component';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { PostExercise } from './post-exercise';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-exercise',
@@ -19,11 +21,10 @@ import { RouterOutlet, RouterLink } from '@angular/router';
   styleUrl: './add-exercise.component.css'
 })
 export class AddExerciseComponent implements OnInit {
-  @Output() exerciseAdded = new EventEmitter<Exercise>();
   form4create: FormGroup;
 
   constructor(
-    private exercisesService: ExercisesService
+    private exercisesService: ExercisesService, private router : Router
   ) {
     this.form4create = new FormGroup({
       name : new FormControl(),
@@ -91,16 +92,20 @@ export class AddExerciseComponent implements OnInit {
 
   onSubmit() {  
     if (this.form4create.valid) {
-      let newExercise = new Exercise(
-        this.exercisesService.getNumberOfExercises() + 1,
-        this.form4create.value.name,
-        this.form4create.value.repeats,
-        this.form4create.value.rate,
-        this.form4create.value.RiR,
-        this.form4create.value.interruption
-      );
-    this.exercisesService.addExercise(newExercise);
-    this.exerciseAdded.emit(newExercise);
+      let newExercise : PostExercise = {
+        name : this.form4create.value.name,
+        repeats : this.form4create.value.repeats,
+        rate : this.form4create.value.rate,
+        RiR : this.form4create.value.RiR,
+        interruption : this.form4create.value.interruption
+      }
+      this.exercisesService.createExercise(newExercise).subscribe(res =>{
+        alert("Pomyślnie dodano ćwiczenie!");
+        this.form4create.reset();
+        this.router.navigate(['exercises']);
+      }, err=>{
+        alert("Dodawanie ćwiczenia nie powiodło się!");
+      })
     this.form4create.reset();
     }
   }

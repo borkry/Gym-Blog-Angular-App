@@ -9,6 +9,8 @@ import { LoginComponent } from '../login/login.component';
 import { PostsListComponent } from '../posts-list/posts-list.component';
 import { AddExerciseComponent } from '../add-exercise/add-exercise.component';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { PostPost } from './post-post';
 
 @Component({
     selector: 'app-add-post',
@@ -20,11 +22,10 @@ import { RouterOutlet, RouterLink } from '@angular/router';
       AboutComponent, LoginComponent, PostsListComponent, AddExerciseComponent, RouterLink]
 })
 export class AddPostComponent implements OnInit{
-  @Output() postAdded = new EventEmitter<Post>();
   form4create: FormGroup;
   
   constructor(
-    private postsService: PostsService
+    private postsService: PostsService, private router : Router
   ) {
     this.form4create = new FormGroup({
       title : new FormControl(),
@@ -94,18 +95,21 @@ export class AddPostComponent implements OnInit{
   
   onSubmit() {  
     if (this.form4create.valid) {
-      let newPost = new Post(
-        this.postsService.getNumberOfPosts() + 1,
-        this.form4create.value.title,
-        this.form4create.value.description,
-        this.form4create.value.category,
-        this.form4create.value.content,
-        this.form4create.value.author,
-        new Date("2023-11-20")
-      );
-    this.postsService.addPost(newPost);
-    this.postAdded.emit(newPost);
-    //console.log(this.postsService.getPosts());
+      let newPost : PostPost = {
+        title : this.form4create.value.title,
+        description : this.form4create.value.description,
+        category : this.form4create.value.category,
+        content : this.form4create.value.content,
+        author : this.form4create.value.author,
+        create_date : new Date()
+      }
+      this.postsService.createPost(newPost).subscribe(res =>{
+        alert("Pomyślnie dodano post!");
+        this.form4create.reset();
+        this.router.navigate(['posts']);
+      }, err=>{
+        alert("Dodawanie postu nie powiodło się!");
+      })
     this.form4create.reset();
     }
   }

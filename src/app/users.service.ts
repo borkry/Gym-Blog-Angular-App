@@ -29,6 +29,10 @@ export class UsersService {
         return JSON.parse(user);
     }
 
+    getUserById(id : number) {
+        return this.http.get<User>(`${this.url}/${id}`)
+    }
+
     createUser(user: PostUser){
         return this.http.post<User>(this.url, user);
     }
