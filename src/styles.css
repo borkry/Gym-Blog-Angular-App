@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+body {
+    background: fixed linear-gradient(166deg, #a592ce13 40%, rgba(253, 253, 253, 1) 40%);
+}
+
+nav {
+    background: #294f6e;
+    background: radial-gradient(circle, rgba(58,115,162,1) 0%, rgba(45,88,123,1) 100%);
+}
+.navbar-brand {
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+.nav-link {
+    color: white;
+    position: relative;
+}
+
+.nav-link::after {
+    position: absolute;
+    content: '';
+    background-color: white;
+    height: 2px;
+    width: 0;
+    margin: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.2s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}

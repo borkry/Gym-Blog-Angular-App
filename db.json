@@ -95,7 +95,7 @@
       "repeats": "12",
       "rate": "wolno",
       "RiR": "0",
-      "interruption": "minuta"
+      "interruption": "1"
     },
     {
       "id": 2,
@@ -103,15 +103,63 @@
       "repeats": "5",
       "rate": "szybko",
       "RiR": "3",
-      "interruption": "5 minut"
+      "interruption": "5"
     },
     {
       "name": "Cwiczenie 3",
       "repeats": "12",
       "rate": "szybko",
       "RiR": "2",
-      "interruption": "3 minuty",
+      "interruption": "3",
       "id": 3
+    },
+    {
+      "name": "Qwerty",
+      "repeats": "54",
+      "rate": "wolno",
+      "RiR": "4",
+      "rest": "5",
+      "id": 4
+    },
+    {
+      "name": "Qewrt",
+      "repeats": "4",
+      "rate": "wolno",
+      "RiR": "3",
+      "rest": "2",
+      "id": 5
+    },
+    {
+      "name": "Qasdfsdf",
+      "repeats": "13",
+      "rate": "wolno",
+      "RiR": "2",
+      "rest": "6",
+      "id": 6
+    },
+    {
+      "name": "Discoadamus",
+      "repeats": "12",
+      "rate": "szybko",
+      "RiR": "2",
+      "rest": "1",
+      "id": 7
+    },
+    {
+      "name": "Qwerwre",
+      "repeats": "12",
+      "rate": "wolno",
+      "RiR": "4",
+      "rest": "5",
+      "id": 8
+    },
+    {
+      "name": "Qersedr",
+      "repeats": "12",
+      "rate": "wolno",
+      "RiR": "1",
+      "rest": "5",
+      "id": 9
     }
   ]
 }

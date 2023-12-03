@@ -31,7 +31,7 @@ export class AddExerciseComponent implements OnInit {
       repeats : new FormControl(),
       rate : new FormControl(),
       RiR : new FormControl(),
-      interruption : new FormControl(),
+      rest : new FormControl(),
     });
   }
 
@@ -51,8 +51,8 @@ export class AddExerciseComponent implements OnInit {
     return this.form4create.get('RiR');
   }
 
-  get interruption() {
-    return this.form4create.get('interruption');
+  get rest() {
+    return this.form4create.get('rest');
   }
 
   ngOnInit() {
@@ -83,21 +83,23 @@ export class AddExerciseComponent implements OnInit {
       Validators.max(5),
     ])
 
-    this.form4create.controls['interruption'].setValidators([
+    this.form4create.controls['rest'].setValidators([
       Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(50),
+      Validators.min(1),
+      Validators.max(50),
+      Validators.minLength(0),
+      Validators.maxLength(2),
     ])
   }
 
-  onSubmit() {  
+  onSubmit() {
     if (this.form4create.valid) {
       let newExercise : PostExercise = {
         name : this.form4create.value.name,
         repeats : this.form4create.value.repeats,
         rate : this.form4create.value.rate,
         RiR : this.form4create.value.RiR,
-        interruption : this.form4create.value.interruption
+        rest : this.form4create.value.rest
       }
       this.exercisesService.createExercise(newExercise).subscribe(res =>{
         alert("Pomyślnie dodano ćwiczenie!");

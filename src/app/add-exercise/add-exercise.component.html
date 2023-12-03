@@ -1,54 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">GYM-BLOG</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"routerLink="/posts">Lista postów</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"routerLink="/addPost">Dodaj nowy post</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"routerLink="/about">Kontakt</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"routerLink="/exercises">Lista ćwiczeń</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"routerLink="/addExercise">Dodaj ćwiczenie</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"routerLink="/login">Wyloguj się</a>
-        </li>
-
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-
 <h1>Dodaj ćwiczenie!</h1>
 <form [formGroup]="form4create" (ngSubmit)="onSubmit()">
     Nazwa ćwiczenia: <input type="text" formControlName="name" required><br>
     Powtórzenia: <input type="text" formControlName="repeats" required><br>
     Tempo: <input type="text" formControlName="rate" required><br>
     RiR: <input type="text" formControlName="RiR" required><br>
-    Przerwa: <input type="text" formControlName="interruption" required><br>
+    Przerwa: <input type="number" formControlName="rest" required><br>
 
     <div *ngIf="name?.errors?.['required'] && name?.touched">Nazwa ćwiczenia jest wymagana!</div>
     <div *ngIf="name?.errors?.['pattern']">Nazwa ćwiczenia musi zaczynać się od wielkiej litery!</div>
@@ -96,15 +52,17 @@
         RiR może wynosić maksymalnie 5!
     </div>
 
-    <div *ngIf="interruption?.errors?.['required'] && interruption?.touched">Przerwa jest wymagana!</div>
-    <div *ngIf="interruption?.errors?.['minlength']">
+    <div *ngIf="rest?.errors?.['required'] && rest?.touched">Przerwa jest wymagana!</div>
+    <div *ngIf="rest?.errors?.['minlength']">
         Przerwa jest za krótkia. Minimalna długość przerwy:
-        {{interruption?.errors?.['minlength']['requiredLength']}}
+        {{rest?.errors?.['minlength']['requiredLength']}}
     </div>
-    <div *ngIf="interruption?.errors?.['maxlength']">
-        Przerwa jest za długia. Maksymalna długość przerwy:
-        {{interruption?.errors?.['maxlength']['requiredLength']}}
+    <div *ngIf="rest?.errors?.['maxlength']">
+        Przerwa jest za długa. Maksymalna długość przerwy:
+        {{rest?.errors?.['maxlength']['requiredLength']}}
     </div>
 
     <input [disabled]="!form4create.valid" type="submit" value="Dodaj ćwiczenie">
 </form>
+
+

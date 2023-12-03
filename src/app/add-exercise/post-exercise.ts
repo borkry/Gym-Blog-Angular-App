@@ -1,7 +1,7 @@
 export interface PostExercise {
     name : string,
     repeats : number,
-    rate : string, 
+    rate : string,
     RiR : number,
-    interruption : string
+    rest : number
 }
