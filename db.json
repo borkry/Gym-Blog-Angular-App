@@ -160,6 +160,14 @@
       "RiR": "1",
       "rest": "5",
       "id": 9
+    },
+    {
+      "name": "Testowe",
+      "repeats": "12",
+      "rate": "szybko",
+      "RiR": "2",
+      "rest": 3,
+      "id": 10
     }
   ]
 }

@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ExercisesListComponent } from './exercises-list/exercises-list.component';
 import { AddExerciseComponent } from './add-exercise/add-exercise.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
     {
@@ -18,6 +19,7 @@ export const routes: Routes = [
         path: 'addPost',
         title: 'Dodawanie postu',
         component: AddPostComponent,
+        canActivate : [authGuard],
     },
     {
         path: 'posts',
@@ -48,5 +50,6 @@ export const routes: Routes = [
         path: 'addExercise',
         title: 'Dodawanie ćwiczenia',
         component: AddExerciseComponent,
+        canActivate : [authGuard],
     }
 ];

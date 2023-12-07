@@ -57,6 +57,8 @@ export class LoginComponent implements OnInit{
         });
         if(user){
           alert("Pomyślnie zalogowano!");
+          this.usersService.setUser(user);
+          console.log(localStorage.getItem('user'));
           this.form4login.reset();
           this.router.navigate(['posts']);
         }

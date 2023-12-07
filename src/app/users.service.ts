@@ -36,4 +36,18 @@ export class UsersService {
     createUser(user: PostUser){
         return this.http.post<User>(this.url, user);
     }
+
+    userLogout() : void {
+        this.user = undefined;
+        localStorage.removeItem('user');
+    }
+
+    isAuthenticated() : boolean {
+        if (localStorage.getItem('user')) {
+            return true;
+        }
+        else { 
+            return false;
+        }
+    }
 }
