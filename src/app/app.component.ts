@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ExerciseListElementComponent } from './exercise-list-element/exercise-list-element.component';
 import { ExercisesListComponent } from './exercises-list/exercises-list.component';
+import { UsersService } from './users.service';
 
 @Component({
   selector: 'app-root',
@@ -18,4 +19,9 @@ import { ExercisesListComponent } from './exercises-list/exercises-list.componen
 })
 export class AppComponent {
   title = 'Gym-Blog';
+  constructor(private userService: UsersService) { }
+
+  onLogoutClick() {
+    this.userService.userLogout();
+  }
 }
