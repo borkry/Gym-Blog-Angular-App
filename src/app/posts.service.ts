@@ -22,4 +22,8 @@ export class PostsService {
     createPost(post : PostPost) {
         return this.http.post<Post>(this.url, post);
     }
+
+    deletePost(id : number) {
+        return this.http.delete<Post>(`${this.url}/${id}`);
+    }
 }

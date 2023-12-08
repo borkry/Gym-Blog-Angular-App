@@ -8,6 +8,8 @@ import { RegisterComponent } from './register/register.component';
 import { ExercisesListComponent } from './exercises-list/exercises-list.component';
 import { AddExerciseComponent } from './add-exercise/add-exercise.component';
 import { authGuard } from './auth.guard';
+import { PostDetailsComponent } from './post-details/post-details.component';
+import { ExerciseDetailsComponent } from './exercise-details/execise-details.component';
 
 export const routes: Routes = [
     {
@@ -51,5 +53,13 @@ export const routes: Routes = [
         title: 'Dodawanie ćwiczenia',
         component: AddExerciseComponent,
         canActivate : [authGuard],
+    },
+    {
+        path: 'posts/:id', 
+        component: PostDetailsComponent
+    },
+    {
+        path: 'exercises/:id',
+        component: ExerciseDetailsComponent
     }
 ];
