@@ -9,7 +9,7 @@ import { ExercisesListComponent } from './exercises-list/exercises-list.componen
 import { AddExerciseComponent } from './add-exercise/add-exercise.component';
 import { authGuard } from './auth.guard';
 import { PostDetailsComponent } from './post-details/post-details.component';
-import { ExerciseDetailsComponent } from './exercise-details/execise-details.component';
+import { ExerciseDetailsComponent } from './exercise-details/exercise-details.component';
 
 export const routes: Routes = [
     {

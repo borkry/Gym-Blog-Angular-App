@@ -5,11 +5,11 @@ import { ExercisesService } from '../exercises.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-execise-details',
+  selector: 'app-exercise-details',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './execise-details.component.html',
-  styleUrl: './execise-details.component.css'
+  templateUrl: './exercise-details.component.html',
+  styleUrl: './exercise-details.component.css'
 })
 export class ExerciseDetailsComponent implements OnInit{
   
