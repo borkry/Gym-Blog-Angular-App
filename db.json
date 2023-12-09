@@ -61,15 +61,6 @@
       "create_date": "2023-11-17"
     },
     {
-      "id": 2,
-      "title": "Tytuł 2",
-      "description": "Opis",
-      "category": "Kategoria",
-      "content": "Treść",
-      "author": "Pudzian",
-      "create_date": "2023-11-12"
-    },
-    {
       "title": "Post 1",
       "description": "Krótki opis",
       "category": "Sport",
@@ -77,15 +68,6 @@
       "author": "Pudzianowski",
       "create_date": "2023-11-11",
       "id": 4
-    },
-    {
-      "title": "Testowy post",
-      "description": "To jest opis",
-      "category": "Test",
-      "content": "AASDskglkadjglaskjgkaslgjasklgjsaklgjlaskgjasklgj",
-      "author": "Marian Kmita",
-      "create_date": "2023-11-29T23:12:12.400Z",
-      "id": 5
     }
   ],
   "exercises": [

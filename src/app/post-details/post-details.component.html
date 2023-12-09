@@ -1,10 +1,12 @@
-<div class="card">
-    <div class="card-body">
-      <h3 class="card-title">{{ post?.title }}</h3>
+<div class="card" >
+  <div class="card-body">
+    <h3 class="card-title">{{ post?.title }}</h3>
+    <div class="card-text">
       <div class="card-subtitle mb-2 text-muted">Autor: {{ post?.author }}</div>
       <div class="card-text">{{ post?.content }}</div>
       <div class="card-text">Data dodania postu: {{ post?.create_date | date : 'shortDate' }}</div>
     </div>
     <button>Edytuj post</button>
-    <button>Usuń post</button>
+    <button (click)="deletePost()">Usuń post</button>
   </div>
+</div>

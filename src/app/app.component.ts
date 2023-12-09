@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { Router, RouterOutlet, RouterLink } from '@angular/router';
 import { PostsListComponent } from './posts-list/posts-list.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { AboutComponent } from './about/about.component';
@@ -19,9 +19,17 @@ import { UsersService } from './users.service';
 })
 export class AppComponent {
   title = 'Gym-Blog';
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService,  private router: Router) { }
 
   onLogoutClick() {
     this.userService.userLogout();
+    this.router.navigate(['/login']);
+
   }
+
+  get isLoggedIn(): boolean {
+    return this.userService.isAuthenticated();
+  }
+
 }
+
