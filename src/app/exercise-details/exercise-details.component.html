@@ -7,7 +7,12 @@
         <div class="mb-2">RiR: {{ exercise?.RiR }}</div>
         <div class="mb-2">Przerwa: {{ exercise?.rest }}</div>
       </div>
-      <button>Edytuj ćwiczenie</button>
-      <button>Usuń ćwiczenie</button>
+
+
+      <div *ngIf="isAdministrator">
+        <button>Edytuj ćwiczenie</button>
+        <button (click)="deleteExercise()">Usuń ćwiczenie</button>
+      </div>
+
     </div>
   </div>

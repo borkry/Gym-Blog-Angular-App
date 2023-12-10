@@ -5,7 +5,7 @@ import { PostUser } from './register/post-user';
 
 @Injectable({
     providedIn: 'root'
-}) 
+})
 export class UsersService {
     user : User | undefined;
     url = 'http://localhost:3000/users';
@@ -46,8 +46,17 @@ export class UsersService {
         if (localStorage.getItem('user')) {
             return true;
         }
-        else { 
+        else {
             return false;
         }
     }
+
+    isAdministrator(): boolean {
+        const userString = localStorage.getItem('user');
+        if (userString) {
+          const user: User = JSON.parse(userString);
+          return user.isAdmin === true;
+        }
+    return false;
+}
 }

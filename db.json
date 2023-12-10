@@ -1,53 +1,28 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Jan",
-      "surname": "Kowalski",
-      "email": "user@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": 6,
-      "name": "Andrzej",
+      "name": "Adrian",
       "surname": "Nowak",
-      "email": "a@wp.pl",
-      "password": "12345"
-    },
-    {
-      "name": "Piotr",
-      "surname": "Wnk",
-      "email": "1test@wp.pl",
-      "password": "12345",
-      "id": 7
+      "email": "test3@wp.pl",
+      "password": "test3",
+      "isAdmin": false,
+      "id": 14
     },
     {
       "name": "Adam",
-      "surname": "Nowak",
-      "email": "abc123@wp.pl",
-      "password": "qwe123",
-      "id": 8
+      "surname": "Grabowiecki",
+      "email": "test100@wp.pl",
+      "password": "test100",
+      "isAdmin": false,
+      "id": 15
     },
     {
-      "name": "Kuba",
-      "surname": "Cimoch",
-      "email": "kubacim3@wp.pl",
-      "password": "12345",
-      "id": 9
-    },
-    {
-      "name": "Krystian",
-      "surname": "Borys",
-      "email": "k@wp.pl",
-      "password": "12345",
-      "id": 10
-    },
-    {
-      "name": "Jan",
-      "surname": "Abacki",
-      "email": "abacki@wp.pl",
-      "password": "12345",
-      "id": 11
+      "name": "Adamczyk",
+      "surname": "Grabowiecki",
+      "email": "admin@wp.pl",
+      "password": "admin",
+      "isAdmin": true,
+      "id": 16
     }
   ],
   "posts": [
@@ -78,14 +53,6 @@
       "rate": "wolno",
       "RiR": "0",
       "interruption": "1"
-    },
-    {
-      "id": 2,
-      "name": "Ćwiczenie 2",
-      "repeats": "5",
-      "rate": "szybko",
-      "RiR": "3",
-      "interruption": "5"
     },
     {
       "name": "Cwiczenie 3",

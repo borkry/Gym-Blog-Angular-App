@@ -74,13 +74,14 @@ export class RegisterComponent implements OnInit {
     ])
   }
 
-  onSubmit() {  
+  onSubmit() {
     if (this.form4create.valid) {
       let newUser : PostUser = {
         name: this.form4create.value.name,
         surname: this.form4create.value.surname,
         email: this.form4create.value.email,
         password: this.form4create.value.password,
+        isAdmin: false
       };
     this.usersService.createUser(newUser).subscribe(res =>{
       alert("Pomyślnie zarejestrowano!");

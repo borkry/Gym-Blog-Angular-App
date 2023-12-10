@@ -5,7 +5,7 @@ import { PostExercise } from './add-exercise/post-exercise';
 
 @Injectable({
     providedIn: 'root'
-}) 
+})
 export class ExercisesService {
     url = 'http://localhost:3000/exercises';
 

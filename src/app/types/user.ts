@@ -4,18 +4,21 @@ export class User {
     private _surname : string;
     private _email : string;
     private _password : string;
+    private _isAdmin: boolean;
 
     constructor(id: number,
         name: string,
         surname: string,
         email: string,
         password: string,
+        isAdmin: boolean = false,
     ){
         this._id = id;
         this._name = name;
         this._surname = surname;
         this._email = email;
         this._password = password;
+        this._isAdmin = isAdmin;
     }
 
     get id(): number {
@@ -25,7 +28,7 @@ export class User {
     get name(): string {
         return this._name;
     }
-    
+
     set name(new_name: string) {
         this._name = new_name;
     }
@@ -33,7 +36,7 @@ export class User {
     get surname(): string {
         return this._surname;
     }
-    
+
     set surname(new_surname: string) {
         this._surname = new_surname;
     }
@@ -41,7 +44,7 @@ export class User {
     get email(): string {
         return this._email;
     }
-    
+
     set email(new_email: string) {
         this._email = new_email;
     }
@@ -49,8 +52,16 @@ export class User {
     get password(): string {
         return this._password;
     }
-    
+
     set password(new_password: string) {
         this._password = new_password;
+    }
+
+    get isAdmin(): boolean {
+        return this._isAdmin;
+    }
+
+    set isAdmin(isAdmin: boolean) {
+        this._isAdmin = isAdmin;
     }
 }

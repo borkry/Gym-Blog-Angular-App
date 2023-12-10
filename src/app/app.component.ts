@@ -31,5 +31,10 @@ export class AppComponent {
     return this.userService.isAuthenticated();
   }
 
+  get isAdministrator(): boolean {
+    console.log(this.userService.isAdministrator());
+    return this.userService.isAdministrator();
+  }
+
 }
 
