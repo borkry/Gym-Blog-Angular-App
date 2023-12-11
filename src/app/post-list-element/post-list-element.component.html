@@ -3,7 +3,7 @@
     <h3 class="card-title">{{ post.title }}</h3>
     <p class="card-text">{{ post.description }}</p>
     <div class="card-subtitle mb-2 text-muted">Autor: {{ post.author }}</div>
-    <div class="card-text">Data dodania postu: {{ post.create_date | date : 'shortDate' }}</div>
+    <div class="card-text" dateFormat [date] = "post.create_date" color="red"></div>
     <button [routerLink]="['/posts', post.id]">Zobacz post</button>
   </div>
 </div>

@@ -11,6 +11,7 @@ import { AddExerciseComponent } from '../add-exercise/add-exercise.component';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { PostPost } from './post-post';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
     selector: 'app-add-post',
@@ -19,7 +20,7 @@ import { PostPost } from './post-post';
     templateUrl: './add-post.component.html',
     styleUrl: './add-post.component.css',
     imports: [CommonModule, FormsModule, ReactiveFormsModule, ExercisesListComponent,
-      AboutComponent, LoginComponent, PostsListComponent, AddExerciseComponent, RouterLink]
+      AboutComponent, LoginComponent, PostsListComponent, AddExerciseComponent, RouterLink, HomeComponent]
 })
 export class AddPostComponent implements OnInit{
   form4create: FormGroup;

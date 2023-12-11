@@ -11,12 +11,13 @@ import { LoginComponent } from '../login/login.component';
 import { PostsListComponent } from '../posts-list/posts-list.component';
 import { AddExerciseComponent } from '../add-exercise/add-exercise.component';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-exercises-list',
   standalone: true,
   imports: [CommonModule, ExerciseListElementComponent, FormsModule, SearchExercisePipe, AddPostComponent,
-    AboutComponent, LoginComponent, PostsListComponent, AddExerciseComponent, RouterLink],
+    AboutComponent, LoginComponent, PostsListComponent, AddExerciseComponent, RouterLink, HomeComponent],
   providers: [ExercisesService],
   templateUrl: './exercises-list.component.html',
   styleUrl: './exercises-list.component.css'

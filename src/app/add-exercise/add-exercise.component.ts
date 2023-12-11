@@ -10,13 +10,14 @@ import { AboutComponent } from '../about/about.component';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { PostExercise } from './post-exercise';
 import { Router } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-add-exercise',
   standalone: true,
   providers: [ExercisesService],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, AddPostComponent,
-    AboutComponent, LoginComponent, PostsListComponent, RouterLink],
+    AboutComponent, LoginComponent, PostsListComponent, RouterLink, HomeComponent],
   templateUrl: './add-exercise.component.html',
   styleUrl: './add-exercise.component.css'
 })

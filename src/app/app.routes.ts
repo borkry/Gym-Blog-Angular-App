@@ -10,6 +10,7 @@ import { AddExerciseComponent } from './add-exercise/add-exercise.component';
 import { authGuard } from './auth.guard';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { ExerciseDetailsComponent } from './exercise-details/exercise-details.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
     {
@@ -61,5 +62,10 @@ export const routes: Routes = [
     {
         path: 'exercises/:id',
         component: ExerciseDetailsComponent
+    },
+    {
+        path: 'home',
+        title: 'Strona główna',
+        component: HomeComponent
     }
 ];

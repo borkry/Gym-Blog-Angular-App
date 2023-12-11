@@ -6,12 +6,13 @@ import { LoginComponent } from '../login/login.component';
 import { PostsListComponent } from '../posts-list/posts-list.component';
 import { AddExerciseComponent } from '../add-exercise/add-exercise.component';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
   imports: [CommonModule, ExercisesListComponent,
-    AddPostComponent, LoginComponent, PostsListComponent, AddExerciseComponent, RouterLink],
+    AddPostComponent, LoginComponent, PostsListComponent, AddExerciseComponent, RouterLink, HomeComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

@@ -9,11 +9,12 @@ import { RegisterComponent } from './register/register.component';
 import { ExerciseListElementComponent } from './exercise-list-element/exercise-list-element.component';
 import { ExercisesListComponent } from './exercises-list/exercises-list.component';
 import { UsersService } from './users.service';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, PostsListComponent, AddPostComponent, RouterLink, AboutComponent, LoginComponent, RegisterComponent, ExerciseListElementComponent, ExercisesListComponent],
+  imports: [CommonModule, RouterOutlet, PostsListComponent, AddPostComponent, HomeComponent, RouterLink, AboutComponent, LoginComponent, RegisterComponent, ExerciseListElementComponent, ExercisesListComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
