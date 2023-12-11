@@ -14,7 +14,7 @@ styleUrls: ['./exercise-details.component.css']
 })
 export class ExerciseDetailsComponent implements OnInit {
 
-exercise: Exercise | undefined;
+exercise!: Exercise;
 isAdministrator: boolean = false;
 
 constructor(

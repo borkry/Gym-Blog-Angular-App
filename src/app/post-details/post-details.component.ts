@@ -4,17 +4,18 @@ import { Post } from '../types/post';
 import { PostsService } from '../posts.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../types/user';
+import { dateFormatDirective } from '../date-format.directive';
 
 @Component({
 selector: 'app-post-details',
 standalone: true,
-imports: [CommonModule],
+imports: [CommonModule, dateFormatDirective],
 templateUrl: './post-details.component.html',
 styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit {
 
-post: Post | undefined;
+post!: Post;
 isAdministrator: boolean = false;
 
 constructor(
