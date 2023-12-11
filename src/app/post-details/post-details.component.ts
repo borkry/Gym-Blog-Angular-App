@@ -5,6 +5,7 @@ import { PostsService } from '../posts.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../types/user';
 import { dateFormatDirective } from '../date-format.directive';
+import { UsersService } from '../users.service';
 
 @Component({
 selector: 'app-post-details',
@@ -21,7 +22,8 @@ isAdministrator: boolean = false;
 constructor(
   private route: ActivatedRoute, 
   private postsService: PostsService, 
-  private router: Router
+  private router: Router,
+  private usersService: UsersService
   ) {}
 
   ngOnInit(): void {
@@ -29,16 +31,7 @@ constructor(
     this.postsService.getPostById(postId).subscribe(post => {
       this.post = post;
     });
-    this.isAdministrator = this.IsAdministrator();
-  }
-
-  private IsAdministrator(): boolean {
-    const userString = localStorage.getItem('user');
-    if (userString) {
-      const user: User = JSON.parse(userString);
-      return user.isAdmin === true;
-    }
-    return false;
+    this.isAdministrator = this.usersService.isAdministrator();
   }
 
   editPost() {

@@ -4,6 +4,7 @@ import { Exercise } from '../types/exercise';
 import { ExercisesService } from '../exercises.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../types/user';
+import { UsersService } from '../users.service';
 
 @Component({
 selector: 'app-exercise-details',
@@ -20,7 +21,8 @@ isAdministrator: boolean = false;
 constructor(
     private route: ActivatedRoute,
     private exercisesService: ExercisesService,
-    private router: Router
+    private router: Router,
+    private usersService: UsersService
   ) {}
 
   ngOnInit(): void {
@@ -28,16 +30,7 @@ constructor(
     this.exercisesService.getExerciseById(exerciseId).subscribe(exercise => {
       this.exercise = exercise;
     });
-    this.isAdministrator = this.IsAdministrator();
-  }
-
-  private IsAdministrator(): boolean {
-    const userString = localStorage.getItem('user');
-    if (userString) {
-      const user: User = JSON.parse(userString);
-      return user.isAdmin === true;
-    }
-    return false;
+    this.isAdministrator = this.usersService.isAdministrator();
   }
 
   editExercise() {
