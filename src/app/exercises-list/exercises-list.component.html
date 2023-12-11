@@ -1,4 +1,4 @@
-Wyszukaj ćwiczenie: <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchValue" style="width: 20%">
+Wyszukaj ćwiczenie: <input class="form-control mr-sm-2" type="search" placeholder="Ćwiczenie" aria-label="Search" [(ngModel)]="searchValue" style="width: 20%">
 
 
 <div *ngFor="let exercise of exercises | searchExercise : searchValue:'title';">

@@ -1,4 +1,4 @@
-Wyszukaj tytuł: <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchValue" style="width: 20%">
+Wyszukaj tytuł: <input class="form-control mr-sm-2" type="search" placeholder="Tytuł" aria-label="Search" [(ngModel)]="searchValue" style="width: 20%">
 
 <div *ngFor="let post of posts | sortByDate | searchPost : searchValue:'title';">
   <app-post-list-element [post]="post"></app-post-list-element>
