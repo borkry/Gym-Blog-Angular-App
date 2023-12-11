@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Post } from '../types/post';
 import { PostsService } from '../posts.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { User } from '../types/user';
 
 @Component({
 selector: 'app-post-details',
@@ -14,14 +15,29 @@ styleUrls: ['./post-details.component.css']
 export class PostDetailsComponent implements OnInit {
 
 post: Post | undefined;
+isAdministrator: boolean = false;
 
-constructor(private route: ActivatedRoute, private postsService: PostsService, private router: Router) {}
+constructor(
+  private route: ActivatedRoute, 
+  private postsService: PostsService, 
+  private router: Router
+  ) {}
 
   ngOnInit(): void {
     const postId = Number(this.route.snapshot.paramMap.get('id'));
     this.postsService.getPostById(postId).subscribe(post => {
       this.post = post;
     });
+    this.isAdministrator = this.IsAdministrator();
+  }
+
+  private IsAdministrator(): boolean {
+    const userString = localStorage.getItem('user');
+    if (userString) {
+      const user: User = JSON.parse(userString);
+      return user.isAdmin === true;
+    }
+    return false;
   }
 
   editPost() {

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Exercise } from '../types/exercise';
 import { ExercisesService } from '../exercises.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { User } from '../types/user';  // Assuming you have a User type
+import { User } from '../types/user';
 
 @Component({
 selector: 'app-exercise-details',
@@ -28,7 +28,6 @@ constructor(
     this.exercisesService.getExerciseById(exerciseId).subscribe(exercise => {
       this.exercise = exercise;
     });
-
     this.isAdministrator = this.IsAdministrator();
   }
 
@@ -39,6 +38,10 @@ constructor(
       return user.isAdmin === true;
     }
     return false;
+  }
+
+  editExercise() {
+    // Kod do nawigacji do formularza edycji ćwiczenia.
   }
 
   deleteExercise() {

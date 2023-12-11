@@ -6,7 +6,9 @@
       <div class="card-text">{{ post?.content }}</div>
       <div class="card-text">Data dodania postu: {{ post?.create_date | date : 'shortDate' }}</div>
     </div>
-    <button>Edytuj post</button>
-    <button (click)="deletePost()">Usuń post</button>
+    <div *ngIf="isAdministrator">
+      <button>Edytuj post</button>
+      <button (click)="deletePost()">Usuń post</button>
+    </div>
   </div>
 </div>
