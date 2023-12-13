@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { Exercise } from '../types/exercise';
 import { ExercisesService } from '../exercises.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { User } from '../types/user';
 import { UsersService } from '../users.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
 selector: 'app-exercise-details',
 standalone: true,
-imports: [CommonModule],
+imports: [CommonModule, RouterLink],
 templateUrl: './exercise-details.component.html',
 styleUrls: ['./exercise-details.component.css']
 })
@@ -33,10 +33,6 @@ constructor(
     this.isAdministrator = this.usersService.isAdministrator();
   }
 
-  editExercise() {
-    // Kod do nawigacji do formularza edycji ćwiczenia.
-  }
-
   deleteExercise() {
     if (confirm('Czy na pewno chcesz usunąć to ćwiczenie?')) {
       const exerciseId = this.exercise?.id;
@@ -52,5 +48,4 @@ constructor(
       }
     }
   }
-
 }

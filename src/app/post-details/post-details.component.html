@@ -7,7 +7,7 @@
       <div class="card-text" dateFormat [date] = "post.create_date" color="red"></div>
     </div>
     <div *ngIf="isAdministrator">
-      <button>Edytuj post</button>
+      <button [routerLink]="['/posts', post.id, 'edit']">Edytuj post</button>
       <button (click)="deletePost()">Usuń post</button>
     </div>
   </div>

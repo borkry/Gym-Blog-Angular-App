@@ -1,5 +1,18 @@
-<h1>Dodaj ćwiczenie!</h1>
-<form [formGroup]="form4create" (ngSubmit)="onSubmit()">
+<h1>Aktualny wygląd ćwiczenia:</h1>
+<div class="card" >
+    <div class="card-body">
+      <h3 class="card-title">{{ exercise.name }}</h3>
+      <div class="card-text">
+        <div class="mb-2">Powtórzenia: {{ exercise.repeats }}</div>
+        <div class="mb-2">Tempo: {{ exercise.rate }}</div>
+        <div class="mb-2">RiR: {{ exercise.RiR }}</div>
+        <div class="mb-2">Przerwa(minuty): {{ exercise.rest }}</div>
+      </div>
+    </div>
+</div>
+
+<h1>Edytuj ćwiczenie:</h1>
+<form [formGroup]="form4edit" (ngSubmit)="onSubmit()">
     Nazwa ćwiczenia: <input type="text" formControlName="name" required><br>
     Powtórzenia: <input type="text" formControlName="repeats" required><br>
     Tempo: <input type="text" formControlName="rate" required><br>
@@ -68,7 +81,5 @@
         {{rest?.errors?.['maxlength']['requiredLength']}}
     </div>
 
-    <input [disabled]="!form4create.valid" type="submit" value="Dodaj ćwiczenie">
+    <input [disabled]="!form4edit.valid" type="submit" value="Edytuj ćwiczenie">
 </form>
-
-

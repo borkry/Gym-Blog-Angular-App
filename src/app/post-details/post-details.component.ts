@@ -6,11 +6,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../types/user';
 import { dateFormatDirective } from '../date-format.directive';
 import { UsersService } from '../users.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
 selector: 'app-post-details',
 standalone: true,
-imports: [CommonModule, dateFormatDirective],
+imports: [CommonModule, dateFormatDirective, RouterLink],
 templateUrl: './post-details.component.html',
 styleUrls: ['./post-details.component.css']
 })
@@ -32,10 +33,6 @@ constructor(
       this.post = post;
     });
     this.isAdministrator = this.usersService.isAdministrator();
-  }
-
-  editPost() {
-    // Kod do nawigacji do formularza edycji posta.
   }
 
   deletePost() {

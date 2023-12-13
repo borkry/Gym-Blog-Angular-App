@@ -61,12 +61,13 @@ export class AddExerciseComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(40),
-      Validators.pattern("[A-Z].*"),
+      Validators.pattern("[A-ZĄĆĘŁŃÓŚŹŻ].*"),
     ]);
 
     this.form4create.controls['repeats'].setValidators([
       Validators.required,
       Validators.min(1),
+      Validators.max(20),
       Validators.maxLength(2),
     ])
 
@@ -87,7 +88,7 @@ export class AddExerciseComponent implements OnInit {
     this.form4create.controls['rest'].setValidators([
       Validators.required,
       Validators.min(1),
-      Validators.max(50),
+      Validators.max(10),
       Validators.minLength(0),
       Validators.maxLength(2),
     ])

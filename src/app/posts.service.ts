@@ -26,4 +26,8 @@ export class PostsService {
     deletePost(id : number) {
         return this.http.delete<Post>(`${this.url}/${id}`);
     }
+
+    editPost(id : number, editedPost : Post) {
+        return this.http.put<Post>(`${this.url}/${id}`, editedPost);
+    }
 }

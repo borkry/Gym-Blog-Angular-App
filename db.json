@@ -28,11 +28,11 @@
   "posts": [
     {
       "id": 1,
-      "title": "Tytuł 1",
-      "description": "Opis",
-      "category": "Kategoria",
-      "content": "Treść",
-      "author": "Pudzian",
+      "title": "Tytuł 2",
+      "description": "Nowy opis",
+      "category": "Sport",
+      "content": "Nowa treść sakjaslkdjaksldjlaskdjlakdsjlkasdjlka",
+      "author": "Pudzianowski",
       "create_date": "2023-11-17"
     },
     {
