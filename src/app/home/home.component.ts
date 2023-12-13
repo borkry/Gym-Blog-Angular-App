@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   templateUrl: './home.component.html',
   imports: [
-    FormsModule
+    FormsModule, CommonModule
   ],
   styleUrls: ['./home.component.css']
 })
@@ -21,29 +20,17 @@ export class HomeComponent {
 
   calculateBMI() {
     if (this.height > 0 && this.weight > 0) {
-      // Przeliczenie wzrostu na metry
       const heightInMeters = this.height / 100;
-
-      // Obliczanie BMI: waga (kg) / (wzrost (m) * wzrost (m))
       this.bmi = this.weight / (heightInMeters * heightInMeters);
-
-      // Określenie kategorii BMI
-      this.bmiCategory = this.getBmiCategory(this.bmi);
-    }
-    console.log("Gaming Console");
-    console.log(this.weight);
-    console.log(this.height);
-  }
-
-  getBmiCategory(bmi: number): string {
-    if (bmi < 18.5) {
-      return 'Niedowaga';
-    } else if (bmi < 24.9) {
-      return 'Prawidłowa waga';
-    } else if (bmi < 29.9) {
-      return 'Nadwaga';
-    } else {
-      return 'Otyłość';
+      if (this.bmi < 18.5) {
+        this.bmiCategory = 'Niedowaga';
+      } else if (this.bmi < 24.9) {
+        this.bmiCategory = 'Prawidłowa waga';
+      } else if (this.bmi < 29.9) {
+        this.bmiCategory = 'Nadwaga';
+      } else {
+        this.bmiCategory = 'Otyłość';
+      }
     }
   }
 }
