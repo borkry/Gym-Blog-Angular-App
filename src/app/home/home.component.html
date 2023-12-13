@@ -1,1 +1,37 @@
-<h1>Strona główna</h1>
+<div class="container mt-4">
+
+  <div class="card" style="margin-bottom: 50px">
+    <div class="card-header">
+      <h2 class="text-center">Witaj na Stronie!</h2>
+    </div>
+    <div class="card-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan, justo ut fringilla imperdiet, est nunc fermentum purus, eu tempor turpis nisl non mauris.</p>
+      <p>Fusce non tortor a elit tristique tincidunt. Vestibulum auctor tellus eu justo ultrices, vel tristique felis scelerisque.</p>
+    </div>
+  </div>
+
+  <div class="card mb-4 mx-auto" style="width: 50%">
+    <div class="card-header text-center">
+      <h2>Kalkulator BMI</h2>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="weight">Waga (kg): </label>
+        <input class="form-control" type="number" [(ngModel)]="weight" id="weight" placeholder="Wprowadź wagę">
+      </div>
+
+      <div class="form-group">
+        <label for="height">Wzrost (cm): </label>
+        <input class="form-control" type="number" [(ngModel)]="height" id="height" placeholder="Wprowadź wzrost">
+      </div>
+
+      <button class="btn btn-primary" (click)="calculateBMI()">Oblicz BMI</button>
+
+      <div class="result mt-3" *ngIf="bmi > 0">
+        <p><strong>Twoje BMI wynosi:</strong> {{ bmi.toFixed(2) }}</p>
+        <p><strong>Kategoria BMI:</strong> {{ bmiCategory }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
