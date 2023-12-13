@@ -5,10 +5,10 @@
       <div class="mb-2">Powtórzenia: {{ exercise.repeats }}</div>
       <div class="mb-2">Tempo: {{ exercise.rate }}</div>
       <div class="mb-2">RiR: {{ exercise.RiR }}</div>
-      <div class="mb-2">Przerwa: {{ exercise.rest }}</div>
+      <div class="mb-2">Przerwa(minuty): {{ exercise.rest }}</div>
     </div>
     <div *ngIf="isAdministrator">
-      <button>Edytuj ćwiczenie</button>
+      <button [routerLink]="['/exercises', exercise.id, 'edit']">Edytuj ćwiczenie</button>
       <button (click)="deleteExercise()">Usuń ćwiczenie</button>
     </div>
   </div>

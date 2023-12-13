@@ -62,35 +62,35 @@ export class AddPostComponent implements OnInit{
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(30),
-      Validators.pattern("[A-Z0-9].*"),
+      Validators.pattern("[A-ZĄĆĘŁŃÓŚŹŻ0-9].*"),
     ])
 
     this.form4create.controls['description'].setValidators([
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(40),
-      Validators.pattern("[A-Z0-9].*"),
+      Validators.pattern("[A-ZĄĆĘŁŃÓŚŹŻ0-9].*"),
     ])
 
     this.form4create.controls['category'].setValidators([
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern("[A-Z].*"),
+      Validators.pattern("[A-ZĄĆĘŁŃÓŚŹŻ].*"),
     ])
 
     this.form4create.controls['content'].setValidators([
       Validators.required,
       Validators.minLength(40),
       Validators.maxLength(400),
-      Validators.pattern("[A-Z0-9].*"),
+      Validators.pattern("[A-ZĄĆĘŁŃÓŚŹŻ0-9].*"),
     ])
 
     this.form4create.controls['author'].setValidators([
       Validators.required,
       Validators.minLength(8),
       Validators.maxLength(50),
-      Validators.pattern("[A-Z].*"),
+      Validators.pattern("[A-ZĄĆĘŁŃÓŚŹŻ].*"),
     ])
   }
   

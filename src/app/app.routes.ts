@@ -11,6 +11,8 @@ import { authGuard } from './auth.guard';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { ExerciseDetailsComponent } from './exercise-details/exercise-details.component';
 import { HomeComponent } from './home/home.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
+import { EditExerciseComponent } from './edit-exercise/edit-exercise.component';
 
 export const routes: Routes = [
     {
@@ -67,5 +69,13 @@ export const routes: Routes = [
         path: 'home',
         title: 'Strona główna',
         component: HomeComponent
+    },
+    {
+        path: 'posts/:id/edit',
+        component: EditPostComponent
+    },
+    {
+        path: 'exercises/:id/edit',
+        component: EditExerciseComponent
     }
 ];

@@ -26,4 +26,8 @@ export class ExercisesService {
     deleteExercise(id : number) {
         return this.http.delete<Exercise>(`${this.url}/${id}`);
     }
+
+    editExercise(id: number, editedExercise : Exercise) {
+        return this.http.put<Exercise>(`${this.url}/${id}`, editedExercise);
+    }
 }
