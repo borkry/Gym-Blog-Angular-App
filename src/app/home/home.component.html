@@ -14,24 +14,33 @@
     <div class="card-header text-center">
       <h2>Kalkulator BMI</h2>
     </div>
-    <div class="card-body">
-      <div class="form-group">
-        <label for="weight">Waga (kg): </label>
-        <input class="form-control" type="number" [(ngModel)]="weight" id="weight" placeholder="Wprowadź wagę">
+    <form [formGroup]="form4bmi" (ngSubmit)="onSubmit()">
+      Waga (kg):<br> <input type="text" formControlName="weight" required><br>
+      Wzrost (cm):<br> <input type="text" formControlName="height" required><br><br>
+
+      <div *ngIf="weight?.errors?.['required'] && weight?.touched">Waga jest wymagana!</div>
+      <div *ngIf="weight?.errors?.['min']">
+        Wzrost musi być liczbą dodatnią!
       </div>
-
-      <div class="form-group">
-        <label for="height">Wzrost (cm): </label>
-        <input class="form-control" type="number" [(ngModel)]="height" id="height" placeholder="Wprowadź wzrost">
+      <div *ngIf="weight?.errors?.['max']">
+        Waga nie może przekraczać 500kg!
       </div>
+      <div *ngIf="weight?.errors?.['pattern']">Waga musi być liczbą!</div>
 
-      <button class="btn btn-primary" (click)="calculateBMI()">Oblicz BMI</button>
-
+      <div *ngIf="height?.errors?.['required'] && height?.touched">Wzrost jest wymagany!</div>
+      <div *ngIf="height?.errors?.['min']">
+        Wzrost musi być liczbą dodatnią!
+      </div>
+      <div *ngIf="height?.errors?.['max']">
+        Wzrost może wynosić maksymalnie 250cm!
+      </div>
+      <div *ngIf="height?.errors?.['pattern']">Wzrost musi być liczbą!</div>
+      <input [disabled]="!form4bmi.valid" type="submit" value="Oblicz BMI">
+    </form>
+  
       <div class="result mt-3" *ngIf="bmi > 0">
         <p><strong>Twoje BMI wynosi:</strong> {{ bmi.toFixed(2) }}</p>
         <p><strong>Kategoria BMI:</strong> {{ bmiCategory }}</p>
       </div>
-    </div>
   </div>
-
 </div>
