@@ -23,6 +23,9 @@
       <div *ngIf="repeats?.errors?.['maxlength']" class="text-danger">
         Liczba powtórzeń jest za długa. Maksymalna długość liczby powtórzeń: {{repeats?.errors?.['maxlength']['requiredLength']}}
       </div>
+      <div *ngIf="repeats?.errors?.['hasWhitespace']" class="text-danger">
+        Liczba powtórzeń nie może zawierać znaku białego!
+      </div>
     </div>
 
     <div class="mb-3">
@@ -49,6 +52,9 @@
       </div>
       <div *ngIf="RiR?.errors?.['min']" class="text-danger">RiR musi być liczbą dodatnią!</div>
       <div *ngIf="RiR?.errors?.['max']" class="text-danger">RiR może wynosić maksymalnie 5!</div>
+      <div *ngIf="RiR?.errors?.['hasWhitespace']" class="text-danger">
+        RiR nie może zawierać znaku białego!
+      </div>
     </div>
 
     <div class="mb-3">
@@ -61,6 +67,9 @@
       <div *ngIf="rest?.errors?.['max']" class="text-danger">Przerwa nie może być większa niż 10 minut!</div>
       <div *ngIf="rest?.errors?.['maxlength']" class="text-danger">
         Przerwa jest za długa. Maksymalna długość przerwy: {{rest?.errors?.['maxlength']['requiredLength']}}
+      </div>
+      <div *ngIf="rest?.errors?.['hasWhitespace']" class="text-danger">
+        Przerwa nie może zawierać znaku białego!
       </div>
     </div>
 

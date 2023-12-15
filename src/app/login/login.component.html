@@ -2,33 +2,39 @@
 <form [formGroup]="form4login" (ngSubmit)="onSubmit()" class="mx-auto" style="width: 30%">
   <div class="form-group">
     <h1>Zaloguj się!</h1>
-    <label for="exampleInputEmail1">Email address</label>
+    <label for="exampleInputEmail1">Adres Email</label>
     <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" required>
-    <div *ngIf="email?.errors?.['required'] && email?.touched">Email is required!</div>
-    <div *ngIf="email?.errors?.['pattern']">Email must match the correct format!</div>
+    <div *ngIf="email?.errors?.['required'] && email?.touched">Email jest wymagany!</div>
+    <div *ngIf="email?.errors?.['pattern']">Email musi mieć odpowiedni format!</div>
     <div *ngIf="email?.errors?.['minlength']">
-      Email is too short. Minimum length:
+      Email jest za krótki! Minimalna długość to:
       {{ email?.errors?.['minlength']['requiredLength'] }}
     </div>
     <div *ngIf="email?.errors?.['maxlength']">
-      Email is too long. Maximum length:
+      Email jest za długi! Maksymalna długość to:
       {{ email?.errors?.['maxlength']['requiredLength'] }}
+    </div>
+    <div *ngIf="email?.errors?.['hasWhitespace']" class="text-danger">
+      Email nie może zawierać znaku białego!
     </div>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
+    <label for="exampleInputPassword1">Hasło</label>
     <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" required>
-    <div *ngIf="password?.errors?.['required'] && password?.touched">Password is required!</div>
+    <div *ngIf="password?.errors?.['required'] && password?.touched">Hasło jest wymagane!</div>
     <div *ngIf="password?.errors?.['minlength']">
-      Password is too short. Minimum length:
+      Hasło jest za krótkie! Minimalna długość to: 
       {{ password?.errors?.['minlength']['requiredLength'] }}
     </div>
     <div *ngIf="password?.errors?.['maxlength']">
-      Password is too long. Maximum length:
+      Hasło jest za długie! Maksymalna długość to:
       {{ password?.errors?.['maxlength']['requiredLength'] }}
     </div>
+    <div *ngIf="password?.errors?.['hasWhitespace']" class="text-danger">
+      Hasło nie może zawierać znaku białego!
+    </div>
   </div>
-  <button [disabled]="!form4login.valid" type="submit" class="btn btn-primary" style="margin-top: 10px">Log in</button>
+  <button [disabled]="!form4login.valid" type="submit" class="btn btn-primary" style="margin-top: 10px">Zaloguj się</button>
   <br>
-  <a routerLink="/register">Don't have an account? Click here to register.</a>
+  <a routerLink="/register">Nie masz konta? Zarejestruj się klikając tutaj!</a>
 </form>

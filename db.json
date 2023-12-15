@@ -63,14 +63,6 @@
       "interruption": "1"
     },
     {
-      "name": "Cwiczenie 3",
-      "repeats": "12",
-      "rate": "szybko",
-      "RiR": "2",
-      "interruption": "3",
-      "id": 3
-    },
-    {
       "name": "Qwerty",
       "repeats": "54",
       "rate": "wolno",
@@ -117,6 +109,14 @@
       "RiR": "2",
       "rest": 3,
       "id": 10
+    },
+    {
+      "name": "Ćwiczenie testowe",
+      "repeats": "12",
+      "rate": "szybko",
+      "RiR": "1",
+      "rest": 5,
+      "id": 11
     }
   ]
 }

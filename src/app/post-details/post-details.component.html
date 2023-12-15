@@ -2,7 +2,7 @@
   <div class="card-body">
     <h3 class="card-title">{{ post.title }}</h3>
     <div class="card-text">
-      <div class="card-subtitle mb-2 text-muted">Autor: {{ post.author }}</div>
+      <div class="card-subtitle mb-2 text-muted">Autor: {{ post.author | titlecase}}</div>
       <div class="card-text">{{ post.content }}</div>
       <div class="card-text" dateFormat [date] = "post.create_date" color="red"></div>
     </div>

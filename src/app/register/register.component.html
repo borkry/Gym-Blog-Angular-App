@@ -12,6 +12,9 @@
       <div *ngIf="name?.errors?.['maxlength']" class="text-danger">
         Imię jest za długie. Maksymalna długość imienia: {{name?.errors?.['maxlength']['requiredLength']}}
       </div>
+      <div *ngIf="name?.errors?.['hasWhitespace']" class="text-danger">
+        Imię nie może zawierać znaku białego!
+      </div>
     </div>
 
     <div class="mb-3">
@@ -24,6 +27,9 @@
       </div>
       <div *ngIf="surname?.errors?.['maxlength']" class="text-danger">
         Nazwisko jest za długie. Maksymalna długość nazwiska: {{surname?.errors?.['maxlength']['requiredLength']}}
+      </div>
+      <div *ngIf="surname?.errors?.['hasWhitespace']" class="text-danger">
+        Nazwisko nie może zawierać znaku białego!
       </div>
     </div>
 
@@ -38,6 +44,9 @@
       <div *ngIf="email?.errors?.['maxlength']" class="text-danger">
         Email jest za długi. Maksymalna długość Emaila: {{email?.errors?.['maxlength']['requiredLength']}}
       </div>
+      <div *ngIf="email?.errors?.['hasWhitespace']" class="text-danger">
+        Email nie może zawierać znaku białego!
+      </div>
     </div>
 
     <div class="mb-3">
@@ -49,6 +58,9 @@
       </div>
       <div *ngIf="password?.errors?.['maxlength']" class="text-danger">
         Hasło jest za długie. Maksymalna długość hasła: {{password?.errors?.['maxlength']['requiredLength']}}
+      </div>
+      <div *ngIf="name?.errors?.['hasWhitespace'] " class="text-danger">
+        Hasło nie może zawierać znaku białego!
       </div>
     </div>
 

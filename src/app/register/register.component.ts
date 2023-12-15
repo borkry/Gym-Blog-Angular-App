@@ -6,6 +6,7 @@ import { UsersService } from '../users.service';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { PostUser } from './post-user';
+import { WhiteSpaceValidator } from '../white-space-validator';
 
 @Component({
   selector: 'app-register',
@@ -51,6 +52,7 @@ export class RegisterComponent implements OnInit {
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern("[A-Z].*"),
+      WhiteSpaceValidator
     ])
 
     this.form4create.controls['surname'].setValidators([
@@ -58,6 +60,7 @@ export class RegisterComponent implements OnInit {
       Validators.minLength(3),
       Validators.maxLength(20),
       Validators.pattern("[A-Z].*"),
+      WhiteSpaceValidator
     ])
 
     this.form4create.controls['email'].setValidators([
@@ -65,12 +68,14 @@ export class RegisterComponent implements OnInit {
       Validators.minLength(5),
       Validators.maxLength(50),
       Validators.pattern("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"),
+      WhiteSpaceValidator
     ])
 
     this.form4create.controls['password'].setValidators([
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(100),
+      WhiteSpaceValidator
     ])
   }
 

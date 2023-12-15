@@ -72,10 +72,12 @@ export const routes: Routes = [
     },
     {
         path: 'posts/:id/edit',
-        component: EditPostComponent
+        component: EditPostComponent,
+        canActivate : [authGuard],
     },
     {
         path: 'exercises/:id/edit',
-        component: EditExerciseComponent
+        component: EditExerciseComponent,
+        canActivate : [authGuard],
     }
 ];

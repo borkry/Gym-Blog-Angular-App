@@ -4,6 +4,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 import { Exercise } from '../types/exercise';
 import { ExercisesService } from '../exercises.service';
+import { WhiteSpaceValidator } from '../white-space-validator';
 
 @Component({
   selector: 'app-edit-exercise',
@@ -65,6 +66,7 @@ export class EditExerciseComponent implements OnInit{
       Validators.min(1),
       Validators.max(20),
       Validators.maxLength(2),
+      WhiteSpaceValidator
     ])
 
     this.form4edit.controls['rate'].setValidators([
@@ -79,6 +81,7 @@ export class EditExerciseComponent implements OnInit{
       Validators.maxLength(1),
       Validators.min(0),
       Validators.max(5),
+      WhiteSpaceValidator
     ])
 
     this.form4edit.controls['rest'].setValidators([
@@ -87,6 +90,7 @@ export class EditExerciseComponent implements OnInit{
       Validators.max(10),
       Validators.minLength(0),
       Validators.maxLength(2),
+      WhiteSpaceValidator
     ])
   }
 

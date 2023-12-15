@@ -41,6 +41,9 @@
         Liczba powtórzeń jest za długa. Maksymalna długość liczby powtórzeń:
         {{repeats?.errors?.['maxlength']['requiredLength']}}
     </div>
+    <div *ngIf="repeats?.errors?.['hasWhitespace']" class="text-danger">
+        Liczba powtórzeń nie może zawierać znaku białego!
+      </div>
 
     <div *ngIf="rate?.errors?.['required'] && rate?.touched">Tempo jest wymagane!</div>
     <div *ngIf="rate?.errors?.['minlength']">
@@ -67,6 +70,9 @@
     <div *ngIf="RiR?.errors?.['max']">
         RiR może wynosić maksymalnie 5!
     </div>
+    <div *ngIf="RiR?.errors?.['hasWhitespace']" class="text-danger">
+        RiR nie może zawierać znaku białego!
+      </div>
 
     <div *ngIf="rest?.errors?.['required'] && rest?.touched">Przerwa jest wymagana!</div>
     <div *ngIf="rest?.errors?.['minlength']">
@@ -80,6 +86,9 @@
         Przerwa jest za długa. Maksymalna długość przerwy:
         {{rest?.errors?.['maxlength']['requiredLength']}}
     </div>
+    <div *ngIf="rest?.errors?.['hasWhitespace']" class="text-danger">
+        Przerwa nie może zawierać znaku białego!
+      </div>
 
     <input [disabled]="!form4edit.valid" type="submit" value="Edytuj ćwiczenie">
 </form>

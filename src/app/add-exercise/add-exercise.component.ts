@@ -11,6 +11,7 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 import { PostExercise } from './post-exercise';
 import { Router } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
+import { WhiteSpaceValidator } from '../white-space-validator';
 
 @Component({
   selector: 'app-add-exercise',
@@ -69,6 +70,7 @@ export class AddExerciseComponent implements OnInit {
       Validators.min(1),
       Validators.max(20),
       Validators.maxLength(2),
+      WhiteSpaceValidator
     ])
 
     this.form4create.controls['rate'].setValidators([
@@ -83,6 +85,7 @@ export class AddExerciseComponent implements OnInit {
       Validators.maxLength(1),
       Validators.min(0),
       Validators.max(5),
+      WhiteSpaceValidator
     ])
 
     this.form4create.controls['rest'].setValidators([
@@ -91,6 +94,7 @@ export class AddExerciseComponent implements OnInit {
       Validators.max(10),
       Validators.minLength(0),
       Validators.maxLength(2),
+      WhiteSpaceValidator
     ])
   }
 
