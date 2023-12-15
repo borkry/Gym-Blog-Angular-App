@@ -38,7 +38,7 @@
       <input [disabled]="!form4bmi.valid" type="submit" value="Oblicz BMI">
     </form>
 
-      <div class="result mt-3" *ngIf="bmi > 0">
+      <div class="result mt-3">
         <p><strong>Twoje BMI wynosi:</strong> {{ bmi.toFixed(2) }}</p>
         <p><strong>Kategoria BMI:</strong> {{ bmiCategory }}</p>
       </div>
