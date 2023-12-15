@@ -1,53 +1,63 @@
-<h1>Załóż konto!</h1>
-<form [formGroup]="form4create" (ngSubmit)="onSubmit()">
-    Imię: <input type="text" formControlName="name" required><br>
-    Nazwisko: <input type="surname" formControlName="surname" required><br>
-    Email: <input type="email" formControlName="email" required><br>
-    Hasło: <input type="password" formControlName="password" required><br>
-
-    <div *ngIf="name?.errors?.['required'] && name?.touched">Imię jest wymagane!</div>
-    <div *ngIf="name?.errors?.['pattern']">Imię musi zaczynać się od wielkiej litery!</div>
-    <div *ngIf="name?.errors?.['minlength']">
-        Imię jest za krótkie. Minimalna długość imienia:
-        {{name?.errors?.['minlength']['requiredLength']}}
-    </div>
-    <div *ngIf="name?.errors?.['maxlength']">
-        Imię jest za długie. Maksymalna długość imienia:
-        {{name?.errors?.['maxlength']['requiredLength']}}
+<div class="container">
+  <h1>Załóż konto!</h1>
+  <form [formGroup]="form4create" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Imię:</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>
+      <div *ngIf="name?.errors?.['required'] && name?.touched" class="text-danger">Imię jest wymagane!</div>
+      <div *ngIf="name?.errors?.['pattern']" class="text-danger">Imię musi zaczynać się od wielkiej litery!</div>
+      <div *ngIf="name?.errors?.['minlength']" class="text-danger">
+        Imię jest za krótkie. Minimalna długość imienia: {{name?.errors?.['minlength']['requiredLength']}}
+      </div>
+      <div *ngIf="name?.errors?.['maxlength']" class="text-danger">
+        Imię jest za długie. Maksymalna długość imienia: {{name?.errors?.['maxlength']['requiredLength']}}
+      </div>
     </div>
 
-    <div *ngIf="surname?.errors?.['required'] && surname?.touched">Nazwisko jest wymagane!</div>
-    <div *ngIf="surname?.errors?.['pattern']">Nazwisko musi zaczynać się od wielkiej litery!</div>
-    <div *ngIf="surname?.errors?.['minlength']">
-        Nazwisko jest za krótkie. Minimalna długość nazwiska:
-        {{surname?.errors?.['minlength']['requiredLength']}}
-    </div>
-    <div *ngIf="surname?.errors?.['maxlength']">
-        Nazwisko jest za długie. Maksymalna długość nazwiska:
-        {{surname?.errors?.['maxlength']['requiredLength']}}
-    </div>
-
-    <div *ngIf="email?.errors?.['required'] && email?.touched">Email jest wymagany!</div>
-    <div *ngIf="email?.errors?.['pattern']">Email musi spełniać odpowiedni format!</div>
-    <div *ngIf="email?.errors?.['minlength']">
-        Email jest za krótki. Minimalna długość Emaila:
-        {{email?.errors?.['minlength']['requiredLength']}}
-    </div>
-    <div *ngIf="email?.errors?.['maxlength']">
-        Email jest za długi. Maksymalna długość Emaila:
-        {{email?.errors?.['maxlength']['requiredLength']}}
+    <div class="mb-3">
+      <label for="surname" class="form-label">Nazwisko:</label>
+      <input type="text" class="form-control" id="surname" formControlName="surname" required>
+      <div *ngIf="surname?.errors?.['required'] && surname?.touched" class="text-danger">Nazwisko jest wymagane!</div>
+      <div *ngIf="surname?.errors?.['pattern']" class="text-danger">Nazwisko musi zaczynać się od wielkiej litery!</div>
+      <div *ngIf="surname?.errors?.['minlength']" class="text-danger">
+        Nazwisko jest za krótkie. Minimalna długość nazwiska: {{surname?.errors?.['minlength']['requiredLength']}}
+      </div>
+      <div *ngIf="surname?.errors?.['maxlength']" class="text-danger">
+        Nazwisko jest za długie. Maksymalna długość nazwiska: {{surname?.errors?.['maxlength']['requiredLength']}}
+      </div>
     </div>
 
-    <div *ngIf="password?.errors?.['required'] && password?.touched">Hasło jest wymagane!</div>
-    <div *ngIf="password?.errors?.['minlength']">
-        Hasło jest za krótkie. Minimalna długość hasła:
-        {{password?.errors?.['minlength']['requiredLength']}}
-    </div>
-    <div *ngIf="password?.errors?.['maxlength']">
-        Hasło jest za długie. Maksymalna długość hasła:
-        {{password?.errors?.['maxlength']['requiredLength']}}
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" formControlName="email" required>
+      <div *ngIf="email?.errors?.['required'] && email?.touched" class="text-danger">Email jest wymagany!</div>
+      <div *ngIf="email?.errors?.['pattern']" class="text-danger">Email musi spełniać odpowiedni format!</div>
+      <div *ngIf="email?.errors?.['minlength']" class="text-danger">
+        Email jest za krótki. Minimalna długość Emaila: {{email?.errors?.['minlength']['requiredLength']}}
+      </div>
+      <div *ngIf="email?.errors?.['maxlength']" class="text-danger">
+        Email jest za długi. Maksymalna długość Emaila: {{email?.errors?.['maxlength']['requiredLength']}}
+      </div>
     </div>
 
-    <input [disabled]="!form4create.valid" type="submit" value="Zarejestruj się">
-    <br><a routerLink="/login">Masz już konto? Zaloguj się.</a>
-</form>
+    <div class="mb-3">
+      <label for="password" class="form-label">Hasło:</label>
+      <input type="password" class="form-control" id="password" formControlName="password" required>
+      <div *ngIf="password?.errors?.['required'] && password?.touched" class="text-danger">Hasło jest wymagane!</div>
+      <div *ngIf="password?.errors?.['minlength']" class="text-danger">
+        Hasło jest za krótkie. Minimalna długość hasła: {{password?.errors?.['minlength']['requiredLength']}}
+      </div>
+      <div *ngIf="password?.errors?.['maxlength']" class="text-danger">
+        Hasło jest za długie. Maksymalna długość hasła: {{password?.errors?.['maxlength']['requiredLength']}}
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <input [disabled]="!form4create.valid" type="submit" class="btn btn-primary" value="Zarejestruj się">
+    </div>
+
+    <div>
+      <a routerLink="/login">Masz już konto? Zaloguj się.</a>
+    </div>
+  </form>
+</div>

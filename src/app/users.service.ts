@@ -55,8 +55,8 @@ export class UsersService {
         const userString = localStorage.getItem('user');
         if (userString) {
           const user: User = JSON.parse(userString);
-          return user.isAdmin === true;
+          return user.isAdmin;
         }
     return false;
-}
+    }
 }

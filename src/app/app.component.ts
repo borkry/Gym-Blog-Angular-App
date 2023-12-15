@@ -27,13 +27,11 @@ export class AppComponent {
     this.router.navigate(['/login']);
 
   }
-
   get isLoggedIn(): boolean {
     return this.userService.isAuthenticated();
   }
 
   get isAdministrator(): boolean {
-    console.log(this.userService.isAdministrator());
     return this.userService.isAdministrator();
   }
 

@@ -1,6 +1,7 @@
-<h1>Zaloguj się!</h1>
+
 <form [formGroup]="form4login" (ngSubmit)="onSubmit()" class="mx-auto" style="width: 30%">
   <div class="form-group">
+    <h1>Zaloguj się!</h1>
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" required>
     <div *ngIf="email?.errors?.['required'] && email?.touched">Email is required!</div>

@@ -5,8 +5,9 @@
       <h2 class="text-center">Witaj na Stronie!</h2>
     </div>
     <div class="card-body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam accumsan, justo ut fringilla imperdiet, est nunc fermentum purus, eu tempor turpis nisl non mauris.</p>
-      <p>Fusce non tortor a elit tristique tincidunt. Vestibulum auctor tellus eu justo ultrices, vel tristique felis scelerisque.</p>
+      <p>Witamy na naszym nowym forum fitness, miejscu, gdzie pasja do zdrowego stylu życia łączy nas wszystkich. To miejsce dedykowane wszystkim entuzjastom fitnessu, bez względu na poziom zaawansowania czy cel treningowy</p>
+      <p>Zapraszamy do dzielenia się swoimi historiami, pytań, planów treningowych czy zdrowych przepisów. Wspólnie możemy stworzyć niepowtarzalną społeczność, która będzie motywować do działania i pomagać w pokonywaniu trudności.</p>
+
     </div>
   </div>
 
@@ -27,7 +28,7 @@
 
       <button class="btn btn-primary" (click)="calculateBMI()">Oblicz BMI</button>
 
-      <div class="result mt-3" *ngIf="bmi > 0">
+      <div class="result mt-3" >
         <p><strong>Twoje BMI wynosi:</strong> {{ bmi.toFixed(2) }}</p>
         <p><strong>Kategoria BMI:</strong> {{ bmiCategory }}</p>
       </div>

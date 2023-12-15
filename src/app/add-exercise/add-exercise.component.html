@@ -1,74 +1,71 @@
-<h1>Dodaj ćwiczenie!</h1>
-<form [formGroup]="form4create" (ngSubmit)="onSubmit()">
-    Nazwa ćwiczenia: <input type="text" formControlName="name" required><br>
-    Powtórzenia: <input type="text" formControlName="repeats" required><br>
-    Tempo: <input type="text" formControlName="rate" required><br>
-    RiR: <input type="text" formControlName="RiR" required><br>
-    Przerwa(minuty): <input type="number" formControlName="rest" required><br>
-
-    <div *ngIf="name?.errors?.['required'] && name?.touched">Nazwa ćwiczenia jest wymagana!</div>
-    <div *ngIf="name?.errors?.['pattern']">Nazwa ćwiczenia musi zaczynać się od wielkiej litery!</div>
-    <div *ngIf="name?.errors?.['minlength']">
-        Nazwa ćwiczenia jest za krótka. Minimalna długość nazwy:
-        {{name?.errors?.['minlength']['requiredLength']}}
-    </div>
-    <div *ngIf="name?.errors?.['maxlength']">
-        Nazwa ćwiczenia jest za długa. Maksymalna długość nazwy:
-        {{name?.errors?.['maxlength']['requiredLength']}}
+<div class="container">
+  <h1>Dodaj ćwiczenie!</h1>
+  <form [formGroup]="form4create" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nazwa ćwiczenia:</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>
+      <div *ngIf="name?.errors?.['required'] && name?.touched" class="text-danger">Nazwa ćwiczenia jest wymagana!</div>
+      <div *ngIf="name?.errors?.['pattern']" class="text-danger">Nazwa ćwiczenia musi zaczynać się od wielkiej litery!</div>
+      <div *ngIf="name?.errors?.['minlength']" class="text-danger">
+        Nazwa ćwiczenia jest za krótka. Minimalna długość nazwy: {{name?.errors?.['minlength']['requiredLength']}}
+      </div>
+      <div *ngIf="name?.errors?.['maxlength']" class="text-danger">
+        Nazwa ćwiczenia jest za długa. Maksymalna długość nazwy: {{name?.errors?.['maxlength']['requiredLength']}}
+      </div>
     </div>
 
-    <div *ngIf="repeats?.errors?.['required'] && repeats?.touched">Liczba powtórzeń jest wymagana!</div>
-    <div *ngIf="repeats?.errors?.['min']">
-        Liczba powtórzeń musi być liczbą dodatnią!
-    </div>
-    <div *ngIf="repeats?.errors?.['max']">
-        Liczba powtórzeń nie może być większa niż 20!
-    </div>
-    <div *ngIf="repeats?.errors?.['maxlength']">
-        Liczba powtórzeń jest za długa. Maksymalna długość liczby powtórzeń:
-        {{repeats?.errors?.['maxlength']['requiredLength']}}
-    </div>
-
-    <div *ngIf="rate?.errors?.['required'] && rate?.touched">Tempo jest wymagane!</div>
-    <div *ngIf="rate?.errors?.['minlength']">
-        Tempo jest za krótkie. Minimalna długość tempa:
-        {{rate?.errors?.['minlength']['requiredLength']}}
-    </div>
-    <div *ngIf="rate?.errors?.['maxlength']">
-        Tempo jest za długie. Maksymalna długość tempa:
-        {{rate?.errors?.['maxlength']['requiredLength']}}
+    <div class="mb-3">
+      <label for="repeats" class="form-label">Powtórzenia:</label>
+      <input type="text" class="form-control" id="repeats" formControlName="repeats" required>
+      <div *ngIf="repeats?.errors?.['required'] && repeats?.touched" class="text-danger">Liczba powtórzeń jest wymagana!</div>
+      <div *ngIf="repeats?.errors?.['min']" class="text-danger">Liczba powtórzeń musi być liczbą dodatnią!</div>
+      <div *ngIf="repeats?.errors?.['max']" class="text-danger">Liczba powtórzeń nie może być większa niż 20!</div>
+      <div *ngIf="repeats?.errors?.['maxlength']" class="text-danger">
+        Liczba powtórzeń jest za długa. Maksymalna długość liczby powtórzeń: {{repeats?.errors?.['maxlength']['requiredLength']}}
+      </div>
     </div>
 
-    <div *ngIf="RiR?.errors?.['required'] && RiR?.touched">RiR jest wymagane!</div>
-    <div *ngIf="RiR?.errors?.['minlength']">
-        RiR jest za krótkie. Minimalna długość RiR:
-        {{RiR?.errors?.['minlength']['requiredLength']}}
-    </div>
-    <div *ngIf="RiR?.errors?.['maxlength']">
-        RiR jest za długie. Maksymalna długość RiR:
-        {{RiR?.errors?.['maxlength']['requiredLength']}}
-    </div>
-    <div *ngIf="RiR?.errors?.['min']">
-        RiR musi być liczbą dodatnią!
-    </div>
-    <div *ngIf="RiR?.errors?.['max']">
-        RiR może wynosić maksymalnie 5!
+    <div class="mb-3">
+      <label for="rate" class="form-label">Tempo:</label>
+      <input type="text" class="form-control" id="rate" formControlName="rate" required>
+      <div *ngIf="rate?.errors?.['required'] && rate?.touched" class="text-danger">Tempo jest wymagane!</div>
+      <div *ngIf="rate?.errors?.['minlength']" class="text-danger">
+        Tempo jest za krótkie. Minimalna długość tempa: {{rate?.errors?.['minlength']['requiredLength']}}
+      </div>
+      <div *ngIf="rate?.errors?.['maxlength']" class="text-danger">
+        Tempo jest za długie. Maksymalna długość tempa: {{rate?.errors?.['maxlength']['requiredLength']}}
+      </div>
     </div>
 
-    <div *ngIf="rest?.errors?.['required'] && rest?.touched">Przerwa jest wymagana!</div>
-    <div *ngIf="rest?.errors?.['minlength']">
-        Przerwa jest za krótkia. Minimalna długość przerwy:
-        {{rest?.errors?.['minlength']['requiredLength']}}
-    </div>
-    <div *ngIf="rest?.errors?.['max']">
-        Przerwa nie może być większa niż 10 minut!
-    </div>
-    <div *ngIf="rest?.errors?.['maxlength']">
-        Przerwa jest za długa. Maksymalna długość przerwy:
-        {{rest?.errors?.['maxlength']['requiredLength']}}
+    <div class="mb-3">
+      <label for="RiR" class="form-label">RiR:</label>
+      <input type="text" class="form-control" id="RiR" formControlName="RiR" required>
+      <div *ngIf="RiR?.errors?.['required'] && RiR?.touched" class="text-danger">RiR jest wymagane!</div>
+      <div *ngIf="RiR?.errors?.['minlength']" class="text-danger">
+        RiR jest za krótkie. Minimalna długość RiR: {{RiR?.errors?.['minlength']['requiredLength']}}
+      </div>
+      <div *ngIf="RiR?.errors?.['maxlength']" class="text-danger">
+        RiR jest za długie. Maksymalna długość RiR: {{RiR?.errors?.['maxlength']['requiredLength']}}
+      </div>
+      <div *ngIf="RiR?.errors?.['min']" class="text-danger">RiR musi być liczbą dodatnią!</div>
+      <div *ngIf="RiR?.errors?.['max']" class="text-danger">RiR może wynosić maksymalnie 5!</div>
     </div>
 
-    <input [disabled]="!form4create.valid" type="submit" value="Dodaj ćwiczenie">
-</form>
+    <div class="mb-3">
+      <label for="rest" class="form-label">Przerwa(minuty):</label>
+      <input type="number" class="form-control" id="rest" formControlName="rest" required>
+      <div *ngIf="rest?.errors?.['required'] && rest?.touched" class="text-danger">Przerwa jest wymagana!</div>
+      <div *ngIf="rest?.errors?.['minlength']" class="text-danger">
+        Przerwa jest za krótka. Minimalna długość przerwy: {{rest?.errors?.['minlength']['requiredLength']}}
+      </div>
+      <div *ngIf="rest?.errors?.['max']" class="text-danger">Przerwa nie może być większa niż 10 minut!</div>
+      <div *ngIf="rest?.errors?.['maxlength']" class="text-danger">
+        Przerwa jest za długa. Maksymalna długość przerwy: {{rest?.errors?.['maxlength']['requiredLength']}}
+      </div>
+    </div>
 
-
+    <div class="mb-3">
+      <input [disabled]="!form4create.valid" type="submit" class="btn btn-primary" value="Dodaj ćwiczenie">
+    </div>
+  </form>
+</div>
