@@ -58,14 +58,14 @@ export class EditPostComponent implements OnInit{
     this.form4edit.controls['title'].setValidators([
       Validators.required,
       Validators.minLength(5),
-      Validators.maxLength(30),
+      Validators.maxLength(70),
       Validators.pattern("[A-ZĄĆĘŁŃÓŚŹŻ0-9].*"),
     ])
 
     this.form4edit.controls['description'].setValidators([
       Validators.required,
       Validators.minLength(5),
-      Validators.maxLength(40),
+      Validators.maxLength(200),
       Validators.pattern("[A-ZĄĆĘŁŃÓŚŹŻ0-9].*"),
     ])
 
@@ -79,7 +79,7 @@ export class EditPostComponent implements OnInit{
     this.form4edit.controls['content'].setValidators([
       Validators.required,
       Validators.minLength(40),
-      Validators.maxLength(400),
+      Validators.maxLength(1000),
       Validators.pattern("[A-ZĄĆĘŁŃÓŚŹŻ0-9].*"),
     ])
 

@@ -17,8 +17,8 @@
       "id": 15
     },
     {
-      "name": "Adam",
-      "surname": "Grabowiecki",
+      "name": "Admin",
+      "surname": "Admin",
       "email": "admin@wp.pl",
       "password": "admin",
       "isAdmin": true,
@@ -36,71 +36,82 @@
   "posts": [
     {
       "id": 1,
-      "title": "Tytuł3",
-      "description": "Nowy opis",
-      "category": "Sport",
-      "content": "OK OK OK OK OK OK OK OKOK OK OK OKOK OK OK OKOK OK OK OKOK OK OK OK",
-      "author": "Marek jarocki",
+      "title": "Co to jest objętość treningowa i dlaczego jest kluczowa?",
+      "description": "Trening siłowy nie ogranicza się jedynie do wykonywania odpowiednich ćwiczeń, systematyczności i kontroli diety. Jedną z kwestii kluczowych, a jednak często pomijanych, jest objętość treningowa.",
+      "category": "Trening",
+      "content": "Trening siłowy nie ogranicza się jedynie do wykonywania odpowiednich ćwiczeń, systematyczności i kontroli diety. Jedną z kwestii kluczowych, a jednak często pomijanych, jest objętość treningowa. To zagadnienie niezwykle istotne dla każdej ćwiczącej osoby, niezależnie od jej poziomu zaawansowania w treningu siłowym. W tym artykule przyjrzymy się, czym jest objętość treningowa, jak ją mierzyć, jak dostosować ją do różnych poziomów zaawansowania oraz dlaczego warto trzymać się określonej objętości treningowej. Jeśli ten temat cię ciekawi, zapraszamy do lektury!",
+      "author": "Jan Wodnik",
       "create_date": "2023-11-17"
     },
     {
-      "title": "Post 1",
-      "description": "Krótki opis",
-      "category": "Sport",
-      "content": "Ansfajksnsajknfjaksnfjkasnfjkasnfjkasnfjkasnfjkasnfjkasnfjkasnfjkasnfjkasnjfknsajkfnasjkfnasjkfnkj",
-      "author": "Pudzianowski",
+      "title": "Czym są dropsety i kiedy je wykonywać?",
+      "description": "W dziedzinie treningu siłowego nieustannie pojawiają się nowe techniki, które pozwalają na osiąganie lepszych rezultatów w krótszym czasie. ",
+      "category": "Ćwiczenia",
+      "content": "Jak ćwiczyć dropsety? Zaczynamy od doboru obciążenia. Początkowo będzie ono dość wysokie (powinniśmy móc swobodnie wykonać około 10 powtórzeń). Następnie wykonujemy pierwszą serię, a zaraz po jej zakończeniu zmniejszamy obciążenie o około 20% i kontynuujemy drugą serię. Zwykle dropsety kończy się po trzech takich seriach, proporcjonalnie zmniejszając obciążenie. Jeśli jednak po wykonaniu takiego treningu, masz siłę na jeszcze jedną serię, nic nie stoi na przeszkodzie - należy jedynie uważać na ryzyko przetrenowania czy uszkodzenia mięśni. ",
+      "author": "Mariusz pudzianowski",
       "create_date": "2023-11-11",
       "id": 4
+    },
+    {
+      "title": "Jak nie przytyć w święta Bożego Narodzenia i utrzymać formę?",
+      "description": "Święta Bożego Narodzenia to czas radości, spotkań rodzinnych i przede wszystkim pysznych potraw, na które często czekamy cały rok.",
+      "category": "Dieta",
+      "content": "Kluczem jest dieta, czyli jak jeść w święta, żeby nie przytyć? Nie da się ukryć, że świąteczna obawa o przytycie nie bierze się znikąd! Faktycznie zdarza nam się zaprzepaścić efekty diety na skutek kilkudniowego obżarstwa. Główną przyczyną jest oczywiście zbyt duża ilość spożywanych kalorii. To właśnie kompletny brak samodyscypliny  sprawia, że po okresie świątecznym trudniej nam dopiąć spodnie. Aby nie przesadzić z jedzeniem w święta, warto wcześniej przemyśleć zasady, których będziemy się trzymać w trakcie każdej rodzinnej uczty.",
+      "author": "Magda Gessler",
+      "create_date": "2023-12-15T23:40:00.128Z",
+      "id": 5
+    },
+    {
+      "title": "Post testowy",
+      "description": "To jest post testowy.",
+      "category": "Test",
+      "content": "Post testowy do usunięcia. Lorem ipsum doloret.",
+      "author": "Użytkownik testowy",
+      "create_date": "2023-12-15T23:43:40.180Z",
+      "id": 6
     }
   ],
   "exercises": [
     {
       "id": 1,
-      "name": "Ćwiczenie 1",
-      "repeats": "12",
-      "rate": "wolno",
-      "RiR": "0",
-      "interruption": "1"
+      "name": "Przysiady ze sztangą",
+      "repeats": "8",
+      "rate": "2-1-2",
+      "RiR": "2",
+      "interruption": "1",
+      "rest": 2
     },
     {
-      "name": "Qwerty",
-      "repeats": "54",
-      "rate": "wolno",
-      "RiR": "4",
-      "rest": "5",
+      "name": "Wyciskanie sztangi leżąc",
+      "repeats": "6",
+      "rate": "3-0-1",
+      "RiR": "1",
+      "rest": 3,
       "id": 4
     },
     {
-      "name": "Qewrt",
-      "repeats": "4",
-      "rate": "wolno",
-      "RiR": "3",
-      "rest": "2",
+      "name": "Podciąganie na drążku",
+      "repeats": "8",
+      "rate": "2-0-2",
+      "RiR": "1",
+      "rest": 2,
       "id": 5
     },
     {
-      "name": "Qasdfsdf",
-      "repeats": "13",
-      "rate": "wolno",
-      "RiR": "2",
-      "rest": "6",
+      "name": "Martwy ciąg",
+      "repeats": "4",
+      "rate": "2-2-2",
+      "RiR": "0",
+      "rest": 4,
       "id": 6
     },
     {
-      "name": "Qwerwre",
-      "repeats": "12",
-      "rate": "wolno",
-      "RiR": "4",
-      "rest": "5",
+      "name": "Wiosłowanie sztangą",
+      "repeats": "10",
+      "rate": "2-0-2",
+      "RiR": "2",
+      "rest": 3,
       "id": 8
-    },
-    {
-      "name": "Qersedr",
-      "repeats": "12",
-      "rate": "wolno",
-      "RiR": "1",
-      "rest": "5",
-      "id": 9
     },
     {
       "name": "Testowe",
