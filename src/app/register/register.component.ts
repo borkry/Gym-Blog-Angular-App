@@ -1,9 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User } from '../types/user';
 import { UsersService } from '../users.service';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { PostUser } from './post-user';
 import { WhiteSpaceValidator } from '../white-space-validator';

@@ -1,11 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
-import { User } from '../types/user';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UsersService } from '../users.service';
-import { RegisterComponent } from '../register/register.component';
-import { RouterOutlet, RouterLink } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 
@@ -13,7 +11,7 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   standalone: true,
   providers: [UsersService],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RegisterComponent, RouterLink],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Post } from '../types/post';
 import { PostsService } from '../posts.service';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
   selector: 'app-edit-post',
   standalone: true,
   providers: [PostsService],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './edit-post.component.html',
   styleUrl: './edit-post.component.css'
 })

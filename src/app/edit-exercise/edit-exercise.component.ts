@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Exercise } from '../types/exercise';
 import { ExercisesService } from '../exercises.service';
 import { WhiteSpaceValidator } from '../white-space-validator';
@@ -9,7 +9,7 @@ import { WhiteSpaceValidator } from '../white-space-validator';
 @Component({
   selector: 'app-edit-exercise',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './edit-exercise.component.html',
   styleUrl: './edit-exercise.component.css'
 })

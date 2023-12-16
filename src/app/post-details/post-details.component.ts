@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Post } from '../types/post';
 import { PostsService } from '../posts.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { User } from '../types/user';
 import { dateFormatDirective } from '../date-format.directive';
 import { UsersService } from '../users.service';
 import { RouterLink } from '@angular/router';
