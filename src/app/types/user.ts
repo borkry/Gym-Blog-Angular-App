@@ -1,25 +1,12 @@
 export class User {
-    private _id : number;
-    private _name : string;
-    private _surname : string;
-    private _email : string;
-    private _password : string;
-    private _isAdmin: boolean;
 
-    constructor(id: number,
-        name: string,
-        surname: string,
-        email: string,
-        password: string,
-        isAdmin: boolean = false,
-    ){
-        this._id = id;
-        this._name = name;
-        this._surname = surname;
-        this._email = email;
-        this._password = password;
-        this._isAdmin = isAdmin;
-    }
+    constructor(private _id : number,
+        private _name : string,
+        private _surname : string,
+        private _email : string,
+        private _password : string,
+        private _isAdmin: boolean
+    ){}
 
     get id(): number {
         return this.id;

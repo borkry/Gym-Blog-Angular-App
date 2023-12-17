@@ -1,25 +1,12 @@
 export class Exercise {
-    private _id: number;
-    private _name: string;
-    private _repeats: number;
-    private _rate: string;
-    private _RiR: number;
-    private _rest: number;
 
-    constructor (id: number,
-        name: string,
-        repeats: number,
-        rate: string,
-        RiR: number,
-        rest: number
-    ){
-        this._id = id;
-        this._name = name;
-        this._repeats = repeats;
-        this._rate = rate;
-        this._RiR = RiR;
-        this._rest = rest;
-    }
+    constructor (private _id: number,
+        private _name: string,
+        private _repeats: number,
+        private _rate: string,
+        private _RiR: number,
+        private _rest: number,
+    ){}
 
     get id(): number {
         return this._id;

@@ -1,28 +1,13 @@
 export class Post {
-  private _id: number;
-  private _title: string;
-  private _description: string;
-  private _category: string;
-  private _content: string;
-  private _author: string;
-  private _create_date: Date;
 
-  constructor(id: number,
-    title: string,
-    description: string,
-    category: string,
-    content: string,
-    author: string,
-    create_date: Date
-  ) {
-    this._id = id;
-    this._title = title;
-    this._description = description;
-    this._category = category;
-    this._content = content;
-    this._author = author;
-    this._create_date = create_date;
-    }
+  constructor(private _id: number,
+    private _title: string,
+    private _description: string,
+    private _category: string,
+    private _content: string,
+    private _author: string,
+    private _create_date: Date
+  ) {}
 
   get id(): number {
     return this._id;
