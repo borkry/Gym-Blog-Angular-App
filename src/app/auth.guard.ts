@@ -11,5 +11,5 @@ export const authGuard: CanActivateFn = (route, state) => {
   }
 
   const router = inject(Router);
-  return router.navigate(['/posts']);
+  return router.navigate(['/home']);
 };
