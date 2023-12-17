@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit{
           this.usersService.setUser(user);
           console.log(localStorage.getItem('user'));
           this.form4login.reset();
-          this.router.navigate(['posts']);
+          this.router.navigate(['home']);
         }
         else{
           alert("Nie ma takiego użytkownika!")
